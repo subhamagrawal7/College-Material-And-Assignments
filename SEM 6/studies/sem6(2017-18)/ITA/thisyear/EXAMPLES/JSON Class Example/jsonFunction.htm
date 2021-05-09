@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+
+<script>
+$.get('1-JSON.json', function(jsonObjects){
+var distanceSum = 0;
+ for(var i=0; i<jsonObjects.length;i++){
+       var distance = jsonObjects[i]["Distance [pc]"];
+        distanceSum = distanceSum + distance;
+ }
+ alert("Average distance " + (distanceSum / jsonObjects.length));
+});
+</script>
+</body>
+</html>

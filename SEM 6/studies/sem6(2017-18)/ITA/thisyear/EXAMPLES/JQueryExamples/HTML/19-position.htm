@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        var x = $("p").position();
+        alert("Top position: " + x.top + " Left position: " + x.left);
+    });
+});
+</script>
+</head>
+<body>
+<p>You are reading this tutorial on javatpoint.com</p>
+<button>Click here to return the offset coordinates of the p element</button>
+</body>
+</html>
+Test it Now
+Another example of jQuery position()
+<!DOCTYPE html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+$("div").click(function () {
+var position = $(this).position();
+$("#lresult").html("left position: <span>" + position.left + "</span>.");
+$("#tresult").html("top position: <span>" + position.top + "</span>.");
+});
+});
+</script>
+<style>
+div { width:60px; height:60px; margin:5px; float:left; }
+</style>
+</head>
+<body>
+<p>Click on any square:</p>
+<span id="lresult"> </span>
+<span id="tresult"> </span>
+<div  style="background-color:#ffd700"></div>
+<div  style="background-color:#030303"></div>
+<div  style="background-color:#473c8b"></div>
+<div  style="background-color:#ee82ee"></div>
+</body>
+</html>  

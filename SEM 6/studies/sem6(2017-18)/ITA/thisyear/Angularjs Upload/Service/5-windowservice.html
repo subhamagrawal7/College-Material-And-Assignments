@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+<h1>AngularJS cancel $window Demo: </h1>
+    <button ng-click="DisplayAlert('Hello World!')">Display Alert</button>
+    <button ng-click="DisplayPrompt()">Display Prompt</button>
+    <script>
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller("myController", function ($scope, $window) {
+
+            $scope.DisplayAlert = function (message) {
+                $window.alert(message);
+            }
+
+            $scope.DisplayPrompt = function () {
+                var name = $window.prompt('Enter Your Name');
+
+                $window.alert('Hello ' + name);
+            }
+
+        });
+    </script>
+</body>
+</html>

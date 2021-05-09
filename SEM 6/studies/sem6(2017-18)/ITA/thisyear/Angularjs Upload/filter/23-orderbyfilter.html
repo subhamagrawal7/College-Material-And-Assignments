@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myApp" >
+<h1>AngularJS orderBy Filter Demo: </h1>
+    <div ng-controller="myController">
+        <select ng-model="SortOrder">
+            <option value="+name">Name (asc)</option>
+            <option value="-name">Name (dec)</option>
+            <option value="+phone">Phone (asc)</option>
+            <option value="-phone">Phone (dec)</option>
+        </select>
+        <ul ng-repeat="person in persons | orderBy:SortOrder">
+
+            <li>{{person.name}} - {{person.phone}}</li>
+        </ul>
+    </div>
+    <script>
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller("myController", function ($scope) {
+
+            $scope.persons = [{ name: 'Nirav', phone: '512-455-1276' },
+                         { name: 'Kruti', phone: '899-333-3345' },
+                         { name: 'Vinod', phone: '511-444-4321' },
+                         { name: 'Harry', phone: '145-788-5678' },
+                         { name: 'Kishor', phone: '433-444-8765' },
+                         { name: 'Paresh', phone: '218-345-5678' }]
+
+            $scope.SortOrder = '+name';
+        });
+    </script>
+</body>
+</html>
+
+<!-- The above example displays a list of person names and phone numbers in a particular order specified using orderBy:SortOrder filter. SortOrder is a model property and will be set to the selected value in the dropdown.
+Therefore, based on the value of SortOrder, ng-repeat directive will display the data.-->

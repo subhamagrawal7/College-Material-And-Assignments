@@ -1,0 +1,29 @@
+<!-- Constrain Movement -->
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   </head>
+
+   <body>
+      <div id = "div4" style = "border:solid 1px;background-color:gainsboro;">
+         <span>You can drag me only within this div.</span><br /><br />
+      </div>
+      <div id = "div5" style = "border:solid 1px;background-color:grey;">
+         <span>You can drag me only along x axis.</span><br /><br />
+      </div>
+
+      <script>
+         $("#div4 span").draggable ({
+            containment : "#div4"
+         });
+         $("#div5 span").draggable ({
+            axis : "x"
+         });
+      </script>
+   </body>
+</html>

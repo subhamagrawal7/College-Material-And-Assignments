@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>detach demo</title>
+  <style>
+  p {
+    background: lightpink;
+    margin: 6px 0;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<p>Hello Guys!</p>
+<p>This is javatpoint.com</p>
+<button>Click here to Attach/detach all p elements. </button>
+<script>
+$( "p" ).click(function() {
+  $( this ).toggleClass( "off" );
+});
+var p;
+$( "button" ).click(function() {
+  if ( p ) {
+    p.appendTo( "body" );
+    p = null;
+  } else {
+    p = $( "p" ).detach();
+  }
+});
+</script>
+</body>
+</html>  

@@ -1,0 +1,25 @@
+<!-- Parsing in JSON ,
+Use at server side for sending response-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+var txt = '{"name":"John", "age":30, "city":"New York"}'
+//document.write(txt.name);
+
+//JSON.parse turns a string of JSON text into a JavaScript object.
+
+var obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+
+//document.getElementById("demo").innerHTML = obj;
+</script>
+
+</body>
+</html>

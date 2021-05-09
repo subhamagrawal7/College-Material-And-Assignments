@@ -1,0 +1,9 @@
+<!DOCTYPE person[
+<!ELEMENT person (name,email, mobile)> 
+<!ELEMENT name (#PCDATA)> 
+<!ELEMENT email (#PCDATA)> 
+<!ELEMENT mobile (#PCDATA)>
+
+<!ATTLIST name id CDATA #IMPLIED> 
+
+]>

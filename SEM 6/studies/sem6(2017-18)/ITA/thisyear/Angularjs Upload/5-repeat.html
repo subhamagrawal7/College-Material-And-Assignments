@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<h1 ng-repeat="x in records">{{x}}</h1>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  $scope.records = [
+    "Virender Sehwag ",
+    "Rohit Sharma",
+    "Ravindra Jadeja",
+    "Virat Kohli",
+  ]
+});
+</script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <style>
+        div {
+            border: 1px solid green;
+            width: 100%;
+            height: 50px;
+            display: block;
+            margin-bottom: 10px;
+            text-align:center;
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body ng-app="" ng-init="students=['Bhavika','Anjali','Bhumika']">
+    <ol>
+        <li ng-repeat="name in students">
+            {{name}}
+        </li>
+    </ol>
+    <div ng-repeat="name in students">
+        {{name}}
+    </div>
+</body>
+</html> -->

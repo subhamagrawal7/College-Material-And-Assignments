@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div.d1").toggle(3000);
+    });
+});
+
+/*$(document).ready(function(){
+     $("button").click(function(){
+        $("div.d1").toggle(1500);
+    });
+});  */
+</script>
+</head>
+<body>
+<button>Toggle</button>
+<div class="d1" style="border:1px solid black;padding:10px;width:250px">
+<p><b>This is a little poem: </b><br/>
+Twinkle, twinkle, little star<br/>
+How I wonder what you are<br/>
+Up above the world so high<br/>
+Like a diamond in the sky<br/>
+Twinkle, twinkle little star<br/>
+How I wonder what you are</p>
+</div>
+</body>
+</html>

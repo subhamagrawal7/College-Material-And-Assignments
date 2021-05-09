@@ -1,0 +1,22 @@
+<!-- Move content by duplicating -->
+<!DOCTYPE html>
+<html>
+   <head>
+       <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   </head>
+
+   <body>
+      <div id = "div6" style = "border:solid 1px;background:#eee; height:50px;">
+         <span>You can duplicate me....</span>
+      </div>
+
+      <script>
+         $("#div6 span").draggable ({
+            helper : "clone"
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+      <script type="text/javascript" language="javascript">
+         $(document).ready(function() {
+            $("div").click(function () {
+               var content = "<marquee><b></b></marquee>";
+               $(this).wrapInner( content );
+            });
+         });
+      </script>
+
+      <style>
+         .div{ margin:12px;padding:12px; border:2px solid #666; width:100px;}
+</style>
+</head>
+<body>
+<p>Click on any square below to see the result:</p>
+<div class="div" id="destination">Javatpoint.com</div>
+<div class="div" style="background-color:lightpink;">JAVA</div>
+<div class="div" style="background-color:green;">SQL</div>
+<div class="div" style="background-color:lightyellow;">HTML</div>
+</body>
+</html>  

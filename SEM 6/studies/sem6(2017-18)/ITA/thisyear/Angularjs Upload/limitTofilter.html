@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="sizeCtrl">
+
+<ul>
+<li ng-repeat="x in cars | limitTo : 4">{{x}}</li>
+</ul>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('sizeCtrl', function($scope) {
+    $scope.cars = ["Audi", "BMW", "Dodge", "Fiat", "Ford", "Volvo"];
+});
+</script>
+
+<p>Only the first three items of the array are displayed.</p>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").wrapAll("<div></div>");
+    });
+});
+</script>
+<style>
+div{background-color: pink;}
+</style>
+</head>
+<body>
+<p>Hello Guys!</p>
+<p>This is javatpoint.com</p>
+<button>Wrap a div element around all p elements</button>
+</body>
+</html>  

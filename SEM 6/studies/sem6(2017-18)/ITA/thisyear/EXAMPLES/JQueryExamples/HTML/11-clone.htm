@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").clone().appendTo("body");
+
+    });
+});
+</script>
+</head>
+<body>
+<p><b> javatpoint.com is a popular tutorial website.</b></p>
+<p><b>javatpoint.com is a training institute also.</b></p>
+<button>Click here, to clone all p elements, and append them to the body element</button>
+</body>
+</html>

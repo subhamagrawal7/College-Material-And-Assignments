@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   </head>
+
+   <body>
+      <div id = "div9" style = "border:solid 1px;background-color:gainsboro;">
+         <span>Drag me to check the event method firing</span><br /><br />
+      </div>
+
+      <script>
+         $("#div9 span").draggable ({
+            cursor: "move",
+            axis : "x",
+            drag: function( event, ui ) {
+               alert("hi..");
+            }
+         });
+      </script>
+   </body>
+</html>

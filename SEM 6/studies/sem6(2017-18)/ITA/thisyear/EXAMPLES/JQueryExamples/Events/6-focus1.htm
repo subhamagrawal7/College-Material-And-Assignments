@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>focus demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ <p><input type="text" value="you can't write"></p>
+<p><input type="password"> </p>
+ <script>
+$( "input[type=text]" ).focus(function() {
+  $( this ).blur();
+});
+</script>
+ </body>
+</html>  

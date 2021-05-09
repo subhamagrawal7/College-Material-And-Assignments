@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>SNAKE AND BALL GAME</title>
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: #00755E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  canvas {
+    border: 1px solid #d98c8c;
+	background: #2D383A;
+    
+  }
+    button{
+        position:absolute;
+        background-color: #d98c8c;
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 16px;
+    }
+
+    .tp{
+        position:relative;
+    }
+
+    #sc{
+      position:absolute;
+      margin-left:30vw;
+      margin-top:0vh;
+    }
+  </style>
+</head>
+<body>
+ <div class="tp">
+    <button style="margin-left:-15vw; margin-top:-5vh;" onclick='moveup()'class="fa fa-toggle-up" style="font-size:46px"></button>
+    <button id='left' style="margin-left:-20vw; margin-top:0vh;"  onclick='moveleft()'class="fa fa-toggle-left" style="font-size:46px"></button>
+    <button id='right' style="margin-left:-10vw; margin-top:0vh;"  onclick='moveright()' class="fa fa-toggle-right" style="font-size:46px"></button>
+    <button id='down' style="margin-left:-15vw; margin-top:5vh;"  onclick='movedown()' class="fa fa-toggle-down" style="font-size:46px"></button>
+  </div>
+  <canvas width="400" height="400" id="game"></canvas>
+  <div id="sc">
+    <h1 id="score" style="color:#d98c8c;"></h1>
+  </div>
+  <script>
+var canvas = document.getElementById('game');
+var context = canvas.getContext('2d');
+
+var grid = 16;
+var count = 0;
+var score=30;
+ 
+var snake = {
+  x: 64,
+  y: 64,
+  
+  dx: grid,
+  dy: 0,
+  
+  cells: [],
+  
+  maxCells: 6
+};
+
+var apple = {
+  x: 320,
+  y: 320
+};
+
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function myFun() {
+    document.getElementById("score").innerHTML = "Your Score is : "+score;
+}
+
+function loop() {
+  requestAnimationFrame(loop);
+
+  if (++count < 6) {
+    return;
+  }
+
+  count = 0;
+  context.clearRect(0,0,canvas.width,canvas.height);
+
+  snake.x += snake.dx;
+  snake.y += snake.dy;
+
+  myFun();
+
+  
+  snake.cells.unshift({x: snake.x, y: snake.y});
+
+  if (snake.cells.length > snake.maxCells) {
+    snake.cells.pop();
+  }
+
+  context.fillStyle = '#FFD12A';
+  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+
+
+    context.fillStyle = '#d98c8c';
+
+    context.fillRect(96,160,192,64);
+    context.fillRect(160,96,64,192);
+    context.fillStyle = '#00CC99';
+    snake.cells.forEach(function(cell, index) {
+    
+    context.fillRect(cell.x, cell.y, grid-1, grid-1);  
+
+    if (cell.x === apple.x && cell.y === apple.y) {
+      
+      snake.maxCells++;
+      score+=10;
+
+	  var found = false;
+      while(!found)
+      {
+	  apple.x = getRandomInt(0, 25) * grid;
+      apple.y = getRandomInt(0, 25) * grid;
+	  if ((apple.x>=96&&apple.x<=272)&&(apple.y>=160&&apple.y<=208))
+	  continue;
+	  if ((apple.y>=96&&apple.y<=272)&&(apple.x>=160&&apple.x<=208))
+	  continue;
+	  found = true;
+	  }
+
+     
+    }
+	 if ((snake.x>=96&&snake.x<=272)&&(snake.y>=160&&snake.y<=208))
+	  {
+	    
+		if(alert('Opps you LOSE as your snake touched the plus \n'+'Your Score : '+score)){}
+        else window.location.href="LEVEL1.html";
+			noLoop();
+  }
+	  else if ((snake.y>=96&&snake.y<=272)&&(snake.x>=160&&snake.x<=208))
+	  {
+	    
+		if(alert('Opps you LOSE as your snake touched the plus \n'+'Your Score : '+score)){}
+        else window.location.href="LEVEL1.html";
+			noLoop();
+	  }
+	 
+	 if (snake.x < 0) {
+        if(alert('Opps you LOSE as your snake touched the border \n'+'Your Score : '+score)){}
+        else window.location.href="LEVEL1.html";
+			noLoop();
+  
+		
+  }
+  else if (snake.x >= canvas.width) {
+  if(alert('Opps you LOSE as your snake touched the border \n'+'Your Score : '+score)){}
+          else window.location.href="LEVEL1.html";
+		noLoop();
+  
+		}
+		
+  if (snake.y < 0) {
+    if(alert('Opps you LOSE as your snake touched the border \n'+'Your Score : '+score)){}
+          else window.location.href="LEVEL1.html";
+		noLoop();	
+  }
+  else if (snake.y >= canvas.height) {
+        if(alert('Opps you LOSE as your snake touched the border \n'+'Your Score : '+score)){}
+          else window.location.href="LEVEL1.html";
+		noLoop();
+  }
+
+    for (var i = index + 1; i < snake.cells.length; i++) {
+      
+      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        if(alert('Opps you LOSE as your snake touched the body \n'+'Your Score : '+score)){}
+          else window.location.href="LEVEL1.html";
+		noLoop();
+      }
+    }
+  });
+}
+
+document.addEventListener('keydown', function(e) {
+  
+  // left arrow key
+  if (e.which === 37 && snake.dx === 0) {
+    snake.dx = -grid;
+    snake.dy = 0;
+  }
+  // up arrow key
+  else if (e.which === 38 && snake.dy === 0) {
+    snake.dy = -grid;
+    snake.dx = 0;
+  }
+  // right arrow key
+  else if (e.which === 39 && snake.dx === 0) {
+    snake.dx = grid;
+    snake.dy = 0;
+  }
+  // down arrow key
+  else if (e.which === 40 && snake.dy === 0) {
+    snake.dy = grid;
+    snake.dx = 0;
+  }
+});
+
+function moveup(){
+    if(snake.dy === 0){
+     snake.dy = -grid;
+     snake.dx = 0;
+    }
+}
+function movedown(){
+    if(snake.dy === 0){
+     snake.dy = grid;
+     snake.dx = 0;
+    }
+}
+
+function moveleft(){
+    if(snake.dx === 0){
+     snake.dx = -grid;
+     snake.dy = 0;
+    }
+}
+
+function moveright(){
+    if(snake.dx === 0){
+     snake.dx = grid;
+     snake.dy = 0;
+    }
+}
+
+
+requestAnimationFrame(loop);
+</script>
+
+</body>
+
+
+
+
+</html>

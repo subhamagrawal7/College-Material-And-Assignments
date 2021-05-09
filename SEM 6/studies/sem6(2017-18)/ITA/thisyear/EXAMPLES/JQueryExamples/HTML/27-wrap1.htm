@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" language="javascript">
+         $(document).ready(function() {
+            $("div").click(function () {
+               var content = '<div class="div"></div>';
+               $("#destination").wrap( content );
+            });
+         });
+</script>
+<style>
+.div{ margin:5px;padding:2px; border:2px solid #666; width:60px;}</style>
+</head>
+<body>
+<p>Click on any square to wrap the text:</p>
+<div id="destination">We are going to wrap this text</div>
+<div class="div" style="background-color:orange;">ONE</div>
+<div class="div" style="background-color:yellow;">TWO</div>
+<div class="div" style="background-color:green;">THREE</div>
+</body>
+</html>

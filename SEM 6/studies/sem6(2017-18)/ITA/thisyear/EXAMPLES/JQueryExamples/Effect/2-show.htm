@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function(){
+        $("#hide").click(function(){
+        $("p").hide(3000);
+    });
+    $("#show").click(function(){
+        $("p").show(3000);
+    });
+});
+
+/*$(document).ready(function(){
+        $("#hide").click(function(){
+        $("p").hide(1000);
+    });
+    $("#show").click(function(){
+        $("p").show(1500);
+    });
+});*/
+</script>
+</head>
+<body>
+<p>
+<b>This is a little poem: </b><br/>
+Twinkle, twinkle, little star<br/>
+How I wonder what you are<br/>
+Up above the world so high<br/>
+Like a diamond in the sky<br/>
+Twinkle, twinkle little star<br/>
+How I wonder what you are
+</p>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+</body>
+</html>

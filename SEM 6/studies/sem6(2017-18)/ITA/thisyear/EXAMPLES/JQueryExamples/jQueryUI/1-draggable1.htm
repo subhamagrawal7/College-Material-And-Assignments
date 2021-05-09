@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+   <head>
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   </head>
+   <body>
+      <div id="div1" style="border:solid 1px;background-color:pink;">
+         <span>I am not movable.</span><br /><br />
+      </div>
+      <div id="div2" style="border:solid 1px;background-color:lightgreen;">
+         <span>
+            Dragging will start only after you drag me for 50px
+         </span>
+         <br /><br />
+      </div>
+      <div id="div3" style="border:solid 1px;background-color:lightyellow;">
+         <span>
+            Wait for 2000ms before starting to drag.
+         </span>
+         <br /><br />
+      </div>
+ <script>
+         $("#div1 span").draggable (
+            { disabled: true}
+         );
+         $("#div2 span").draggable (
+            { distance: 50 }
+         );
+         $("#div3 span").draggable (
+            { delay: 2000 }
+         );
+ </script>
+   </body>
+</html>

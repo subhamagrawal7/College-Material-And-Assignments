@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").unwrap();
+    });
+});
+</script>
+<style>
+div{background-color: orange;}
+article{background-color: yellowgreen;}
+</style>
+</head>
+<body>
+<div>
+<p>Hello Guys!</p>
+</div>
+<article>
+<p>This is javatpoint.com</p>
+</article>
+<button>Click here to remove the parent element of each p element</button>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("p").prepend("<b>Prepended text</b>. ");
+    });
+});
+</script>
+</head>
+<body>
+<p>This is the first paragraph.</p>
+<p>This is the second paragraph.</p>
+<button id="btn1">Prepend text</button>
+</body>
+</html>    

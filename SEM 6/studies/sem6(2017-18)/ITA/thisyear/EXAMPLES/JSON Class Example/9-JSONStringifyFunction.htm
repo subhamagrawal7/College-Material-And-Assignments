@@ -1,0 +1,21 @@
+<!-- Stringify Function in JSON -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JSON.stringify will remove any functions from an object.</h2>
+
+<p id="demo"></p>
+
+<script>
+var obj = { name: "John", age: function () {return 30;}, city: "New York" };
+obj.age = obj.age.toString();
+var myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+
+//document.write(obj);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- Difference between detach() and remove() method -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("body").append($("#p1").detach());
+    });
+    $("#btn2").click(function(){
+        $("body").append($("#p2").remove());
+    });
+    $("p").click(function(){
+        $(this).animate({fontSize: "+=1px"})
+    });
+});
+</script>
+</head>
+<body>
+<p id="p1"><b>This paragraph will keep its click event even after it is moved.</b></p>
+<p id="p2">This paragraph will not keep its click event after it is moved.</p>
+<button id="btn1">Detach and append p element</button>
+<button id="btn2">Remove and append p element</button>
+</body>
+</html>

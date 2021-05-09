@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<div ng-if="error">Invalid Credentials</div>
+<form ng-submit="login()">
+  Username
+  <input ng-model="user.username"><br>
+  password
+  <input ng-model="user.password" type="password"><br>
+  <button type="submit">Submit</button>
+
+</form>
+
+<p ng-if="is_login">You have loggedin success.</p>
+<p ng-if="!is_login">You are not loggedin</p>
+
+
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+
+$scope.error = false;
+$scope.user = {};
+
+  $scope.login = function(){
+
+$scope.error = false;
+    console.log($scope.user);
+
+    $http.post("login.php", $scope.user)
+    .then(function(response) {
+        $scope.content = response.data;
+        console.log(response);
+        $scope.is_login = true;
+    }, function(response) {
+        $scope.content = "Something went wrong";
+        console.log(response);
+        $scope.error = true;
+    });
+
+  }
+});
+</script>
+
+</body>
+</html>

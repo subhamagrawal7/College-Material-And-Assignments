@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app >
+<h1>AngularJS Date Filter Demo: </h1>
+    <div ng-init="person.DOB = '2019-04-01T22:22:22.2425232+08:00'">
+      
+        Default date: {{person.DOB| date}} <br />
+        Short date: {{person.DOB| date:'short'}} <br />
+        Long date: {{person.DOB | date:'longDate'}} <br />
+        Year: {{person.DOB | date:'yyyy'}} <br />
+    </div>
+</body>
+</html>
+
+<!-- Your computer's time:
+Sat Mar 30 2019 09:33:50 GMT+0530 (Asia/Calcutta)
+equals
+1553918630365 milliseconds

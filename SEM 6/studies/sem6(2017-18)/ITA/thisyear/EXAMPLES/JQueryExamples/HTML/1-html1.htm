@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        alert($("p").html());
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Return the content of p element</button>
+<p>This is another <b>paragraph</b>.</p>
+<p>This is first <b>paragraph</b>.</p>
+</body>
+</html>

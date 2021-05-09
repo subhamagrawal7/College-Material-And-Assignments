@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myNgApp">
+<h1>AngularJS $rootScope Demo: </h1>
+    <div ng-controller="parentController">
+        Controller Name: {{controllerName}} <br />
+        Message: {{message}} <br />
+        <div style="margin:10px 0 10px 20px;" ng-controller="childController">
+            Controller Name: {{controllerName}} <br />
+            Message: {{message}} <br />
+        </div>
+    </div>
+    <div  ng-controller="siblingController">
+        Controller Name: {{controllerName}} <br />
+        Message: {{message}} <br />
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp', []);
+
+        ngApp.controller('parentController', function ($scope, $rootScope) {
+            $scope.controllerName = "parentController";
+              $scope.message = "Hardi Desai";
+            $rootScope.message = "SVNIT College";
+        });
+
+        ngApp.controller('childController', function ($scope, $rootScope) {
+            $scope.controllerName = "childController";
+            $scope.message = "Hardi Patel";
+            $rootScope.message = "IIIT College";
+
+        });
+
+        ngApp.controller('siblingController', function ($scope, $rootScope) {
+
+
+        });
+    </script>
+</body>
+</html>

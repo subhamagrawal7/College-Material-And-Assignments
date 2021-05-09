@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<h1>AngularJS cancel $interval Demo: </h1>
+    <div>
+        <div ng-controller="myController">
+            {{counter}} <br />
+            <button ng-click="cancel()">Cancel</button>
+        </div>
+
+    </div>
+    <script>
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller("myController", function ($scope, $interval) {
+             $scope.counter = 0;
+
+            var increaseCounter = function () {
+                $scope.counter = $scope.counter + 1;
+            }
+
+            var promise = $interval(increaseCounter, 1000);
+
+            $scope.cancel = function () {
+                $interval.cancel(promise);
+
+				$scope.counter = "Cancelled!";
+			};
+
+        });
+    </script>
+</body>
+</html>

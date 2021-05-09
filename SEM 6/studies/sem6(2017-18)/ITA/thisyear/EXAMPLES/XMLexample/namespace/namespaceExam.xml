@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<personData>
+	<user id='1' xmlns:a="http://www.w3.org/2001/XMLSchema-instance">
+		<a:fname>Hardi</a:fname>
+		<a:lname>Desai</a:lname>
+		<a:email>xyz@exmple.com</a:email>
+	</user>
+	
+	<user id='2' xmlns:b="http://www.w3.org/2001/XMLSchema-instance">
+		<b:fname>Sunil</b:fname>
+		<b:lname>Patel</b:lname>
+		<b:email>pqr@exmple.com</b:email>
+	</user>
+	
+	<user id='3' xmlns:c="http://www.w3.org/2001/XMLSchema-instance">
+		<c:fname>Padma</c:fname>
+		<c:lname>singh</c:lname>
+		<c:email>mno@exmple.com</c:email>
+	</user>
+	
+</personData>
+
+<!-- <personData>
+	<user>
+		<fname>Hardi</fname>
+		<lname>Desai</lname>
+		<email>xyz@exmple.com</email>
+	</user>
+	
+	<user>
+		<fname>Sunil</fname>
+		<lname>Patel</lname>
+		<email>pqr@exmple.com</email>
+	</user>
+	
+	<user>
+		<fname>Padma</fname>
+		<lname>singh</lname>
+		<email>mno@exmple.com</email>
+	</user>
+	
+</personData>	 -->

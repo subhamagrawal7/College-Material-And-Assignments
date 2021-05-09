@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<h1>AngularJS $http Demo: </h1>
+    <div ng-controller="myController">
+            Response Data: {{data}} <br />
+			Error: {{error}}
+    </div>
+    <script>
+       var myApp = angular.module('myApp', []);
+
+        myApp.controller("myController", function ($scope, $http) {
+
+            var onSuccess = function (data, status, headers, config) {
+                $scope.data = data;
+            };
+
+            var onError = function (data, status, headers, config) {
+                $scope.error = status;
+            }
+
+           var getReq = {
+                    method: 'GET',
+                    url: '/demo/getdata'
+                };
+
+            $http(getReq).success(onSuccess).error(onError);
+
+            var postReq = {
+                    method: 'POST',
+                    url: '/demo/submitData',
+                    data: { myData: 'test data' }
+                };
+
+            $http(postReq).success(onSuccess).error(onError);
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   </head>
+
+   <body>
+      <div id = "div7" style = "border:solid 1px;background-color:gainsboro;">
+         <span>You can't move me. Dragging is disabled.</span><br><br>
+      </div>
+      <div id = "div8" style = "border:solid 1px;background-color:grey;">
+         <span>You can move me. Dragging is enabled.</span><br><br>
+      </div>
+
+      <script>
+         $("#div7 span").draggable ();
+         $("#div7 span").draggable ('disable');
+         $("#div8 span").draggable ();
+         $("#div8 span").draggable ('enable');
+      </script>
+   </body>
+</html>

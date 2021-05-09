@@ -1,0 +1,31 @@
+indispensible,evolving and transformative technology internet
+aplications- from a simple web page to any big financial website or portal
+from simple text information to current web of maps, social media websites and different file sharing services
+hazards like accessibility, legality, accuracy and overall worth
+goal to engineer webapps that are used everyday in different and rich ways
+blog a commentary or diary to allow user to share its personal thoughts and experiences
+blog communication channel social network and marketing tool
+wiki website supporting user editing of site content
+mashups hybrid web apps to provide a novel synergistic outcome combing fb, google, amazon and so on
+ajax asynchronous javascript and xml used for more responsive web apps used to get data without loading the page
+syndication fragment of webapp to be included in other application best is really simple syndication
+web service a software component(possibly remote) providing some definite functionality through an interface
+Web services description language (WSDL) is used to describe Web service interfaces
+SOAP is a protocol for communicating with Web services
+WS-BPEL (Web Services—Business Process Execution Language) describes the state transition interactions that occur in business processes and how these map to Web service operations
+Web services do not focus on specific types of Web applications, but rather, define an architecture that supports the creation of applications
+A folksonomy is a collaboratively generated taxonomy, which uses user generated tags and metadata to describe content (the labeling process is often referred to as tagging)
+A richer representation is possible using RDF (Resource Description Framework)—an XML format for making statements about resources
+Ontologies (a representation of a domain that can be used as the basis of reasoning) can then be built on top of the RDF and can result in languages such as OWL (Web Ontology Language) that can be used to publish and share data that describes a particular domain
+Enables the transmission of voice data over the Internet voip
+As GPS receivers become more common, it becomes increasingly feasible for Web clients to have available to them information on the location of the client location aware web apps
+To build this new generation of WebApps, requires to aggregate Web of data sources and services
+1.Look to add value to the aggregate Web of data
+2.Build for normal users, developers, and machines
+3.Start designing with data, not pages
+4.Identify your first order objects and make them addressable
+5.Use readable, reliable URLs
+6.Build list views and batch manipulation interfaces
+7.Create parallel data services using standards
+8.Make your data as discoverable as possible
+web 3.0 semantic

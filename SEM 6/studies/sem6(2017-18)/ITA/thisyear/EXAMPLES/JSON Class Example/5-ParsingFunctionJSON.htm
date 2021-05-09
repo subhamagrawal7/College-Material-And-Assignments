@@ -1,0 +1,25 @@
+<!-- Parsing Function in JSON -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Convert a string into a function.</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"name":"John", "age":"function() {return 30;}", "city":"New York"}';
+var obj = JSON.parse(text);
+
+//JSON.parse() can use the eval() function to convert a JSON text into a JavaScript object
+//obj.age = eval("(" + obj.age + ")");
+//document.getElementById("demo").innerHTML = obj.name + ", " + obj.age();
+document.write( obj.age);
+</script>
+
+</body>
+</html>
+
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval -->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <style>
+        div {
+            width: 100%;
+            height: 50px;
+            display: block;
+            margin: 15px 0 0 10px;
+        }
+    </style>
+</head>
+<body ng-app ng-init="checked=true" >
+    Click Me: <input type="checkbox" ng-model="checked" /> <br />
+    <div>
+        New: <input ng-if="checked" type="text" />
+    </div>
+    <div>
+        Read-only: <input ng-readonly="checked" type="text" value="This is read-only." />
+    </div>
+    <div>
+        Disabled: <input ng-disabled="checked" type="text" value="This is disabled." />
+    </div>
+</body>
+</html>
+
+
+<!-- <div ng-controller="fessCntrl">
+     <label ng-repeat="(key,val) in list">
+       <input type="radio" name="localityTypeRadio" ng-model="$parent.localityTypeRadio" ng-value="key" />{{key}}
+         <div ng-if="key == 'City' || key == 'County'">
+             <pre>City or County !!! {{$parent.localityTypeRadio}}</pre>
+         </div>
+         <div ng-if="key == 'Town'">
+             <pre>Town!!! {{$parent.localityTypeRadio}}</pre>
+         </div>
+      </label>
+</div> -->

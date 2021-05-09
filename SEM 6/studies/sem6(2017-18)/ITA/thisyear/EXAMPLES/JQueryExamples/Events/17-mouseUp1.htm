@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").mousedown(function(){
+        $("p").css("background-color", "pink");
+    });
+    $("p").mouseup(function(){
+        $("p").css("background-color", "yellowgreen");
+    });
+});
+</script>
+</head>
+<body>
+<p>Press down and release the mouse left button over this div element</p>
+</body>
+</html>  

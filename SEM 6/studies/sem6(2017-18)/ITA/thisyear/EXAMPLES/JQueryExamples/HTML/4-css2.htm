@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").css({"background-color": "yellow", "font-size": "200%"});
+    });
+});
+</script>
+</head>
+<body>
+<h2>This is a heading</h2>
+<p style="background-color:#ff0000">The background-color of this paragraph is red.</p>
+<p style="background-color:#00ff00">The background-color of this paragraph is green.</p>
+<p style="background-color:#0000ff">The background-color of this paragraph is blue.</p>
+<p>This paragraph has no background-color.</p>
+<button>Click here to set multiple styles for all selected elements.</button>
+</body>
+</html>  

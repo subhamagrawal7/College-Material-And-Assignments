@@ -1,0 +1,40 @@
+<!-- jQuery bind() example with mouseenter() and mouseleave() events -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>bind demo</title>
+  <style>
+  p {
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+  p.over {
+     background: #ccc;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<p>Click or double click on the statement.</p>
+<span></span>
+<script>
+$( "p" ).bind( "click", function( event ) {
+  var str = "( " + event.pageX + ", " + event.pageY + " )";
+  $( "span" ).text( "This is a single click! " + str );
+});
+$( "p" ).bind( "dblclick", function() {
+  $( "span" ).text( "This is a double click on " + this.nodeName );
+});
+$( "p" ).bind( "mouseenter mouseleave", function( event ) {
+  $( this ).toggleClass( "over" );
+});
+</script>
+</body>
+</html>

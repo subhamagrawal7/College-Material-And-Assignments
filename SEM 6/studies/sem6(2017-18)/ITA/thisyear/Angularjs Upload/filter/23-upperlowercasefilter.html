@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app >
+<h1>AngularJS Uppercase/Lowercase Filter Demo: </h1>
+    <div ng-init="person.firstName='James';person.lastName='Bond'">
+        Lower case: {{person.firstName + ' ' + person.lastName | lowercase}} <br />
+        Upper case: {{person.firstName + ' ' + person.lastName | uppercase}}
+    </div>
+</body>
+</html>

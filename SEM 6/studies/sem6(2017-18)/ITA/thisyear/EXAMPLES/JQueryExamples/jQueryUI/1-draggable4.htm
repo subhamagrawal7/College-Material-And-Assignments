@@ -1,0 +1,28 @@
+<!-- Get Current Option Value -->
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   </head>
+
+   <body>
+      <div id = "divX" style = "border:solid 1px;background:#eee; height:50px;">
+         <span>Click anywhere on me to see cursor type...</span>
+      </div>
+
+      <script>
+         /* First make the item draggable */
+         $("#divX span").draggable();
+
+         $("#divX span").bind('click', function( event ) {
+            var cursor = $( "#divX span" ).draggable( "option", "cursor" );
+            var cursorAt = $( "#divX span" ).draggable( "option", "cursorAt" );
+            alert("Cursor type - " + cursor + ", cursorAt - " + cursorAt);
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myNgApp">
+
+    <div ng-controller="loginController">
+        <h3>Login Controller</h3>
+        <button ng-click="login()">Login</button>
+        <button ng-click="logout()">Logout</button>
+    </div>
+    <hr>
+    <div id="div1" ng-controller="myController">
+        <h3>My Controller</h3>
+        Is Login: {{is_login}}
+        <br>
+        <button ng-click="checkLogin()">check Login</button>
+    </div>
+    <hr>
+    <div id="div4" ng-controller="anotherController">
+      <h3>Another Controller</h3>
+      Is Login: {{is_login}}
+      <br>
+      <button ng-click="checkLogin()">Check Login</button>
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp', []);
+
+        ngApp.service('loginService',function(){
+          this.is_login = false;
+          console.log("Login Service Initiated");
+
+          this.getIsLogin = function(){
+            return this.is_login;
+          }
+
+          this.setIsLogin = function(isLogin){
+            this.is_login = isLogin;
+          }
+        });
+
+        ngApp.controller('myController', function ($scope, loginService) {
+            $scope.is_login = loginService.getIsLogin();
+
+            $scope.checkLogin = function(){
+              $scope.is_login = loginService.getIsLogin();
+            };
+        });
+
+        ngApp.controller('loginController', function ($scope, loginService) {
+            $scope.login = function(){
+              loginService.setIsLogin(true);
+            }
+
+            $scope.logout = function(){
+              loginService.setIsLogin(false);
+            }
+        });
+
+        ngApp.controller('anotherController', function ($scope, loginService) {
+          $scope.is_login = loginService.getIsLogin();
+
+          $scope.checkLogin = function(){
+            $scope.is_login = loginService.getIsLogin();
+          };
+        });
+    </script>
+</body>
+</html>

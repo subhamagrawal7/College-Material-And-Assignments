@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="ajax.js" type="text/javascript"></script>
+<script src="gallery.js" type="text/javascript"></script>
+<script language="JavaScript">
+preloading("images/big-girl.gif");
+preloading("images/big-thinking.gif");
+preloading("images/big-sea.gif");
+preloading("images/big-sand.gif");
+</script>
+<style>
+#views
+{
+	position:relative;
+	height:932px;
+	min-heigth:932px;
+	margin:16px;
+	overflow:auto;
+}
+#leftview
+{
+	position:absolute;
+	top:0px;
+}
+#bigview
+{
+	position:absolute;
+	top:0px;
+	left: 300px;	
+	background-color:while;
+	width:400px;
+	height:400px;
+	min-height:400px;	
+}
+</style>	
+</head>
+<body>
+
+<h1> Ajax script to scale images demo</h1>
+  
+ <div id="views">
+<div id="leftview">
+<p><img src="images/thumb-girl.gif" width="199" height="152" onmouseover="enlarge(this)"> </p>
+  <p><img src="images/thumb-thinking.gif" width="198" height="173" onmouseover="enlarge(this)"></p>
+  <p><img src="images/thumb-sand.gif" width="200" height="196" onmouseover="enlarge(this)"></p>
+  <p><img src="images/thumb-sea.gif" width="200" height="348" onmouseover="enlarge(this)"></p>
+</div>
+<div id="bigview" onclick="alert(this);"></div>
+</div>
+    
+</body>  
+</html>

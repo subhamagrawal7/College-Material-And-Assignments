@@ -1,0 +1,18 @@
+<!-- Stringify Date -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JSON.stringify will convert any date objects into strings.</h2>
+
+<p id="demo"></p>
+
+<script>
+var obj = { name: "John", today: new Date(), city: "New York" };
+var myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+</script>
+
+</body>
+</html>

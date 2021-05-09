@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        alert("Background color = " + $("p").css("background-color"));
+    });
+});
+</script>
+</head>
+<body>
+<h2>This is a heading</h2>
+<p style="background-color:#ff0000">The background-color of this paragraph is red.</p>
+<p style="background-color:#00ff00">The background-color of this paragraph is green.</p>
+<p style="background-color:#0000ff">The background-color of this paragraph is blue.</p>
+<button>Click here to get the background-color of first matched element</button>
+</body>
+</html>

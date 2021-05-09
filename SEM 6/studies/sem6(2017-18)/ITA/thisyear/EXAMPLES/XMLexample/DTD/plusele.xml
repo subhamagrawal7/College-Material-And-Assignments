@@ -1,0 +1,14 @@
+<!DOCTYPE person[
+<!ELEMENT person (name+)> 
+<!ELEMENT name (#PCDATA)> 
+
+
+]>
+
+<!-- must occur one or more times-->
+<person>
+	<name>Hardi</name>
+	<name>Hardi</name> 
+</person>
+
+

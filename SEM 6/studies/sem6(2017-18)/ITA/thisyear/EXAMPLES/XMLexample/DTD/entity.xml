@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE person[
+<!ELEMENT person (name,email, mobile, entities)> 
+<!ELEMENT name (#PCDATA)> 
+<!ELEMENT email (#PCDATA)> 
+<!ELEMENT mobile (#PCDATA)> 
+<!ELEMENT entities (#PCDATA)> 
+
+<!ENTITY firstname "Hardi">
+<!ENTITY lastname "Desai">
+
+]>
+
+<!--<person> -->
+<person>
+	<name>Hardi</name>
+	<email>xyz@example.com</email> 
+	<mobile>123456789</mobile> 
+	<entities>&firstname;&lastname;</entities>
+</person>
+
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        alert("Inner height of the div is: " + $("div").innerHeight());
+    });
+});
+</script>
+</head>
+<body>
+<div style="height:100px;width:500px;padding:10px;margin:3px;border:1px solid blue;background-color:lightpink;"></div><br>
+<button>Click here to get the inner height of the div</button>
+</body>
+</html>  

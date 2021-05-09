@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="student">
+        <xs:complexType mixed="true">  <!-- if we remove mix attribute, error -->
+			<xs:sequence>
+				
+                <xs:element name="Name" type="xs:string"/>
+				<xs:element name="Roll_No" type="xs:integer"/>
+					<xs:element name="Passing_Date" type="xs:date"/>
+				
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

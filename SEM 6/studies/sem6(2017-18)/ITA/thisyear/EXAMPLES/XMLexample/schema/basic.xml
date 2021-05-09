@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<note xmlns="http://localhost/xml-xsd"
+xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+i:schemaLocation="http://localhost/xml-xsd basic.xsd"
+>
+	<to>xyz</to>
+	<from>pqr</from>
+	<heading>Reminder</heading>
+	<body>sjdfbsngvng</body>
+</note>

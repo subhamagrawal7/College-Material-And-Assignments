@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE person[
+<!ELEMENT person (name,email, mobile?)> 
+<!ELEMENT name (#PCDATA)> 
+<!ELEMENT email (#PCDATA)> 
+<!ELEMENT mobile (#PCDATA)> 
+
+]>
+
+<!--<person> -->
+<person>
+	<name>Hardi</name>
+	<email>xyz@example.com</email> 
+	<mobile>123456789</mobile> <!-- if remove this, not generate error -->
+</person>
+
+

@@ -1,0 +1,14 @@
+<!DOCTYPE person[
+<!ELEMENT person (name*)> 
+<!ELEMENT name (#PCDATA)> 
+
+
+]>
+<!-- Declare zero or more times -->
+<!--<person> -->
+<person>
+	<name>Hardi</name>
+	 <name>Hardi</name> 
+	 <name>Hardi</name> 
+	 <name>Hardi</name> 
+</person>

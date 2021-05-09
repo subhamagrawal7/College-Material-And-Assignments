@@ -1,0 +1,32 @@
+<!-- The following example demonstrates handling click event of a button. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body NG-APP="myNgApp">
+    <div NG-CONTROLLER="myController">
+        Enter Message: <input type="text" NG-MODEL="message" /> <br />
+        <button NG-CLICK="showMsg(message)">Show Message</button>
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp', []);
+
+        ngApp.controller('myController', function ($scope) {
+            $scope.message = "Hello World!";
+
+            $scope.showMsg = function (msg) {
+                alert(msg);
+            };
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- In AngularJS, a Controller is defined by a JavaScript constructor function that is used to augment the AngularJS Scope.
+
+Controllers can be attached to the DOM in different ways. For each of them, AngularJS will instantiate a new Controller object, using the specified Controller's constructor function:
+
+the ngController directive. A new child scope will be created and made available as an injectable parameter to the Controller's constructor function as $scope.-->

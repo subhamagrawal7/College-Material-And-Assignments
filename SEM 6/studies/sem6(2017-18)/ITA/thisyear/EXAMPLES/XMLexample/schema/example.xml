@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<example
+xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+i:schemaLocation="http://localhost/xml-xsd example.xsd"
+>
+
+    <child_string>This is an example.</child_string>
+    <child_integer>hello</child_integer>
+	<!-- <child_integer>1234</child_integer> -->
+</example>

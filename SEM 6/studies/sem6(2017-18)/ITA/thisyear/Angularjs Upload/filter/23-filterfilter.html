@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myApp" >
+<h1>AngularJS Filter Demo: </h1>
+    <div ng-controller="myController">
+        Enter Name to search: <input type="text" ng-model="searchCriteria" /> <br />
+        Result: {{myArr | filter:searchCriteria}}
+    </div>
+    <script>
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller("myController", function ($scope) {
+            $scope.myArr = ['Steve', 'Bill', 'James', 'Rob', 'Ram', 'Moin']
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- In the above example, searchCriteria contains a text entered in the input box, which will be used to filter
+items of an array myArr using filter:searchCriteria expression. -->

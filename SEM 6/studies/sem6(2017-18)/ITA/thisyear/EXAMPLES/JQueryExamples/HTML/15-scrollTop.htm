@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        alert($("div").scrollTop() + " px");
+    });
+});
+</script>
+</head>
+<body>
+<div style="border:1px solid black;width:150px;height:100px;overflow:auto">
+Twinkle, twinkle, little star,How I wonder what you are!
+Up above the world so high, Like a diamond in the sky.
+Twinkle, twinkle, little star, How I wonder what you are!</div><br>
+<button>Return the vertical position of the scrollbar</button>
+<p>Move the scrollbar down and click the button again.</p>
+</body>
+</html>  

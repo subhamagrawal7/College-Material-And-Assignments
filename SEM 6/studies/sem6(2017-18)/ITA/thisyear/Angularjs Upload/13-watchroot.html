@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myNgApp">
+<h1>AngularJS $watch Demo: </h1>
+    <div ng-controller="myController">
+        Enter Message: <input type="text" ng-model="message" /> <br />
+        New Message: {{newMessage}} <br />
+        Old Message: {{oldMessage}}
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp', []);
+
+        ngApp.controller('myController', function ($scope) {
+            $scope.message = "SVNIT";
+
+            $scope.$watch('message', function (newValue, oldValue) {
+                $scope.newMessage = newValue;
+                $scope.oldMessage = oldValue;
+
+            });
+        });
+    </script>
+</body>
+</html>

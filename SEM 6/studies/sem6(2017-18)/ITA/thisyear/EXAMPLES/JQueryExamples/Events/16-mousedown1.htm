@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").mousedown(function(){
+        $("p").css("background-color", "blue");
+    });
+    $("p").mouseup(function(){
+        $("p").css("background-color", "yellow");
+    });
+});
+</script>
+</head>
+<body>
+<p>Press down the mouse left button over this p element</p>
+</body>
+</html>  

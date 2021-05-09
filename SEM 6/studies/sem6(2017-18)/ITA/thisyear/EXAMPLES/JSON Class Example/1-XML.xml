@@ -1,0 +1,20 @@
+<!-- Simple XML file --> 
+
+<employees>
+
+  <employee>
+    <firstName>John</firstName>
+     <lastName>Doe</lastName>
+  </employee>
+
+  <employee>
+    <firstName>Anna</firstName>
+     <lastName>Smith</lastName>
+  </employee>
+
+  <employee>
+    <firstName>Peter</firstName>
+     <lastName>Jones</lastName>
+  </employee>
+
+</employees>

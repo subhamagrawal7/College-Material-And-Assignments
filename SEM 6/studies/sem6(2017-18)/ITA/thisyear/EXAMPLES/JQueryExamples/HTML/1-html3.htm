@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").html(function(n,Currentcontent){
+      return "This p element has index: " + n + "& content is <b>" + Currentcontent;
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Change the content of the p elements</button>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+</body>
+</html>

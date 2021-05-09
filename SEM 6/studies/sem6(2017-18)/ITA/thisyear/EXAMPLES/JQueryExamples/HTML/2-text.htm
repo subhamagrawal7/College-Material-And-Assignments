@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>text demo</title>
+  <style>
+  p {
+    color: blue;
+    margin: 8px;
+  }
+  b {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<p><b>Hello! </b>javatpoint.com</p>
+<p></p>
+<script>
+var str = $( "p:first" ).text();
+$( "p:last" ).html( str );
+</script>
+</body>
+</html>  

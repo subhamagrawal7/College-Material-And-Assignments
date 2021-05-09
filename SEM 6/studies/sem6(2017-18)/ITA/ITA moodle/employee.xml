@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Employee_Info
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="employee.xs">
+  <Employee  Employee_Number="105">
+    <Name>Ankita</Name>
+    <Department>Computer Department</Department>
+    <Telephone>03-1452-4567</Telephone>
+    <Email>ankita@gmail.com</Email>
+  </Employee>
+  <Employee  Employee_Number="109">
+    <Name>Aiko Tanaka</Name>
+    <Department>Sales Department</Department>
+    <Telephone>03-6459-98764</Telephone>
+    <Email>tanaka@gmail.com</Email>
+  </Employee>
+</Employee_Info>

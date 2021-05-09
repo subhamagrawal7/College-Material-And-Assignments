@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        var x = $("p").position();
+        alert("Top position: " + x.top + " Left position: " + x.left);
+    });
+});
+</script>
+</head>
+<body>
+<p>You are reading this tutorial on javatpoint.com</p>
+<button>Click here to return the offset coordinates of the p element</button>
+</body>
+</html>  

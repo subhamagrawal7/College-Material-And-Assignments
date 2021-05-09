@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<persons>
+ 
+	<firstname>xya</firstname>
+	<lastname>ert</lastname>  <!-- not valid for choice -->
+	<lastname>ert</lastname> 
+	<lastname>ert</lastname> 
+	
+	
+	
+
+</persons>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>innerHeight demo</title>
+  <style>
+div {
+  width: 60px;
+  padding: 10px;
+  height: 100px;
+  float: left;
+  margin: 5px;
+  background: orange;
+  cursor: pointer;
+}
+.mod {
+  background: green;
+  cursor: default;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div>A</div>
+<div>B</div>
+<div>C</div>
+<div>D</div>
+<div>E</div>
+<script>
+var modHeight = 80;
+$( "div" ).one( "click", function() {
+  $( this ).innerHeight( modHeight ).addClass( "mod" );
+    alert("innerHeight of div: " +modHeight);
+  modHeight -= 8;
+});
+</script>
+</body>
+</html>

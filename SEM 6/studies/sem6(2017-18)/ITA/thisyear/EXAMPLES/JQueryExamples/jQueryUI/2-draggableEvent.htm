@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang = "en">
+   <head>
+      <meta charset = "utf-8">
+      <title>jQuery UI Droppable - Default functionality</title>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+      <style>
+         #draggable-5 {
+            width: 100px; height: 50px; padding: 0.5em; float: left;
+            margin: 22px 5px 10px 0;
+         }
+         #droppable-8 {
+            width: 120px; height: 90px;padding: 0.5em; float: left;
+            margin: 10px;
+         }
+      </style>
+
+      <script>
+         $(function() {
+            $( "#draggable-5" ).draggable();
+            $("#droppable-8").droppable({
+               drop: function (event, ui) {
+                  $( this )
+                  .addClass( "ui-state-highlight" )
+                  .find( "p" )
+                  .html( "Dropped!" );
+               },
+
+               over: function (event, ui) {
+                  $( this )
+                  .addClass( "ui-state-highlight" )
+                  .find( "p" )
+                  .html( "moving in!" );
+               },
+               out: function (event, ui) {
+                  $( this )
+                  .addClass( "ui-state-highlight" )
+                  .find( "p" )
+                  .html( "moving out!" );
+               }
+            });
+         });
+      </script>
+   </head>
+
+   <body>
+      <div id = "draggable-5" class = "ui-widget-content">
+         <p>Drag me to my target</p>
+      </div>
+      <div id = "droppable-8" class = "ui-widget-header">
+         <p>Drop here</p>
+      </div>
+   </body>
+</html>

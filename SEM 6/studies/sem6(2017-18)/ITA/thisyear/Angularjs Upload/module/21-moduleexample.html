@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <script src="~/Scripts/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        {{message}}
+    </div>
+    <script>
+        var myApp = angular.module("myApp", []);
+
+        myApp.controller("myController", function ($scope) {
+            $scope.message = "SVNIT COllege Surat";
+        });
+    </script>
+</body>
+</html>

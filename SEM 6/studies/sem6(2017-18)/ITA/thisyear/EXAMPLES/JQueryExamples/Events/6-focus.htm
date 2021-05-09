@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>focus demo</title>
+  <style>
+  span {
+    display: none;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ <p><input type="text"> <span>Focus starts.. Write your name.</span></p>
+<p><input type="password"> <span>Focus starts.. Write your password.</span></p>
+ <script>
+$( "input" ).focus(function() {
+  $( this ).next( "span" ).css( "display", "inline" ).fadeOut( 2000 );
+});
+</script>
+ </body>
+</html>
+
+
+<!-- The jQuery next() method is used to get the immediately following sibling
+i.e. the next sibling element of the selected element.-->

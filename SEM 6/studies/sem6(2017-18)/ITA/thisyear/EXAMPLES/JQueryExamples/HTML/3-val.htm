@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>val demo</title>
+  <style>
+  p {
+    color: red;
+    margin: 4px;
+  }
+  b {
+    color: blue;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<p></p>
+<select id="single">
+  <option>Single</option>
+  <option>Double</option>
+ <option>Triple</option>
+</select>
+<script>
+function displayVals() {
+  var singleValues = $( "#single" ).val();
+  $( "p" ).html( "<b>Value:</b> " + singleValues);
+}
+$( "select" ).change( displayVals );
+displayVals();
+</script>
+</body>
+</html>

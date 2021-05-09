@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideUp("slow");
+    });
+});
+</script>
+ <style>
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #00FFFF;
+    border: solid 1px #c3c3c3;
+}
+#panel {
+    padding: 50px;
+}
+</style>
+</head>
+<body>
+<div id="flip">Click to slide up panel</div>
+<div id="panel">Hello javatpoint.com!
+It is the best tutorial website to learn jQuery and other languages.</div>
+</body>
+</html>  

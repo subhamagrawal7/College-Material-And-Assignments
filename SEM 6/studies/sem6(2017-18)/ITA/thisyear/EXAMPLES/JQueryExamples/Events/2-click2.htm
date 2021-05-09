@@ -1,0 +1,21 @@
+<!-- when you click on the heading element, it will hide the current heading. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("h1,h2,h3").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+</head>
+<body>
+<h1>This heading will disappear if you click on this.</h1>
+<h2>I will also disappear.</h2>
+<h3>Me too.</h3>
+</body>
+</html>

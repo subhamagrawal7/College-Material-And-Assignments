@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body ng-app="myNgApp">
+    <h2>Student Information:</h2>
+    <div ng-controller="myController">
+        First Name: {{student.firstName}} <br />
+        Last Name: {{student.lastName}}
+    </div>
+    <script>
+         var ngApp = angular.module('myNgApp', []);
+
+        ngApp.controller('myController', function ($scope) {
+            $scope.student = { firstName: 'Kruti', lastName: 'Patel' };
+        });
+    </script>
+</body>
+</html>

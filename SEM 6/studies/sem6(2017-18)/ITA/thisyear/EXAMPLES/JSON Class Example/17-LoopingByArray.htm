@@ -1,0 +1,30 @@
+<!-- Looping Through an Array -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Looping through an array using a for in loop:</p>
+
+<p id="demo"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = {
+  "name":"John",
+  "age":30,
+  "cars":[ "Ford", "BMW", "Fiat" ]
+};
+
+for (i in myObj.cars) {
+  x += myObj.cars[i] + "<br>";
+} 
+
+/* for (i = 0; i < myObj.cars.length; i++) {
+  x += myObj.cars[i] + "<br>";
+} */
+document.getElementById("demo").innerHTML = x;
+</script>
+
+</body>
+</html>

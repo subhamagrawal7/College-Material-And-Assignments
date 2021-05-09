@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE person[
+<!ELEMENT person (name,email, mobile)> 
+<!ELEMENT name (#PCDATA)> 
+<!ELEMENT email (#PCDATA)> 
+<!ELEMENT mobile (#PCDATA)>
+
+<!ATTLIST name id CDATA #IMPLIED> 
+
+]>
+
+<!--<person> -->
+<person>
+	<name>Hardi</name> <!-- optional so if remove id,  no error occure -->
+	<email>xyz@example.com</email> 
+	<mobile>123456789</mobile> 
+</person>
+
+

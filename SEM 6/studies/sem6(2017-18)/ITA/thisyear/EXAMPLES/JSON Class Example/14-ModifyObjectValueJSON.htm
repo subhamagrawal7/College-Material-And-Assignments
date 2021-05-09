@@ -1,0 +1,33 @@
+<!-- Modify Object Value -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to modify values in a JSON object.</p>
+
+<p id="demo"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = {
+  "name":"John",
+  "age":30,
+  "cars": {
+  "car1":"Ford",
+  "car2":"BMW",
+  "car3":"Fiat"
+  }
+}
+myObj.cars.car2 = "Mercedes";
+//myObj.cars["car2"] = "Mercedes";
+
+for (i in myObj.cars) {
+  x += myObj.cars[i] + "<br>";
+}
+
+document.getElementById("demo").innerHTML = x;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mouseover demo</title>
+  <style>
+  div.out {
+    width: 40%;
+    height: 120px;
+    margin: 0 15px;
+    background-color: lightgreen;
+  }
+  div.in {
+    width: 60%;
+    height: 60%;
+    background-color: red;
+    margin: 10px auto;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ <div class="out">
+  <span style="padding:20px">move your mouse</span>
+  <div class="in"></div>
+</div>
+<script>
+$( "div.out" )
+  .mouseover(function() {
+    $( this ).find( "span" ).text( "mouse over " );
+  })
+  .mouseout(function() {
+    $( this ).find( "span" ).text( "mouse out " );
+  });
+</script>
+</body>
+</html>

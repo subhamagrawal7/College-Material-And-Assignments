@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+    <br/>
+
+    Number:
+    <input type="number" name="myNumber" ng-model="text1">
+    <span ng-show="myForm.myNumber.$error.number">Not a valid Number</span>
+      <!-- //The ng-show directive shows the specified HTML element if the expression evaluates to true,
+     otherwise the HTML element is hidden.-->
+</form>
+
+<p>Enter your e-mail address in the input field. AngularJS will display an errormessage if the address is not an e-mail.</p>
+
+</body>
+</html>

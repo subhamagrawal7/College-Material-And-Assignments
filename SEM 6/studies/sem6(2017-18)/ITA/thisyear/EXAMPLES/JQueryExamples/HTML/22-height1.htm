@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>height demo</title>
+  <style>
+  div {
+    width: 50px;
+    height: 100px;
+    float: left;
+    margin: 5px;
+    background: rgb(255,140,0);
+    cursor: pointer;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+$( "div" ).one( "click", function() {
+  $( this ).height( 50 ).css({
+    cursor: "auto",
+    backgroundColor: "green"
+  });
+});
+</script>
+</body>
+</html>

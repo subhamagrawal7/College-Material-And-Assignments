@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src= "jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<form>
+  <select id="mySelect" size="8">
+    <option>Apple</option>
+    <option>Pear</option>
+    <option>Banana</option>
+    <option>Orange</option>
+  </select>
+</form>
+<br>
+
+<p>Click the button to add a "Kiwi" option at the end of the dropdown list.</p>
+
+<input type="text" id="option_text" placeholder="Option Name"/>
+<button type="button" onclick="myFunction()">Insert option</button>
+
+<script>
+function myFunction() {
+  var x = $("#mySelect");
+  var optionTextElement = $("#option_text");
+  
+  var option = document.createElement("option");
+  
+  var optionTextValue = optionTextElement.val();
+  //alert(optionTextValue);
+  
+  if(optionTextValue == "")
+  {
+  	alert("Must Enter Text");
+    return false;
+    }
+	$("#mySelect").append(new Option(optionTextValue));
+    //option.text = optionTextValue;
+    optionTextElement.val("");
+  //x.add(option);
+}
+</script>
+
+</body>
+</html>

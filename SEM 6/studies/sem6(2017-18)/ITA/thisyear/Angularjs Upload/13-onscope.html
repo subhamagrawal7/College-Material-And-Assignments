@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="onscope">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+  <!--  <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.14/angular.js" data-semver="1.3.14"></script>-->
+    <script src="13-app.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="FirstCtrl">
+    	<input ng-model="name"/>
+    	<button ng-click="register()">Register </button>
+    </div>
+
+    <div ng-controller="SecondCtrl">
+    	Registered Name: <input ng-model="name"/>
+    </div>
+  </body>
+
+</html>
+
+
+<!-- The 'data-semver' attribute appears to be an implementation of Semantic Versioning-->

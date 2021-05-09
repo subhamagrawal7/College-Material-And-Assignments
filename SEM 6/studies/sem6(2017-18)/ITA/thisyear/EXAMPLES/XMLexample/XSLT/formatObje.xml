@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root>
+<fo:layout-master-set>
+
+    <fo:simple-page-master master-name="cover"
+
+        page-height="12cm"
+
+        page-width="12cm"
+
+        margin-top="0.5cm"
+
+        margin-bottom="0.5cm"
+
+        margin-left="1cm"
+
+        margin-right="0.5cm">
+
+    </fo:simple-page-master>
+
+
+
+    <fo:simple-page-master master-name="leftPage"
+
+        page-height="12cm"
+
+        page-width="12cm"
+
+        margin-left="0.5cm"
+
+        margin-right="1cm"
+
+        margin-top="0.5cm"
+
+        margin-bottom="0.5cm">
+
+    </fo:simple-page-master>
+
+
+
+    <fo:simple-page-master master-name="rightPage"
+
+        page-height="12cm"
+
+        page-width="12cm"
+
+        margin-left="1cm"
+
+        margin-right="0.5cm"
+
+        margin-top="0.5cm"
+
+        margin-bottom="0.5cm">
+
+    </fo:simple-page-master>
+
+
+
+    <!-- more info will go here -->
+
+</fo:layout-master-set>
+</fo:root>

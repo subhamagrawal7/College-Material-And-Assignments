@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+      <script type="text/javascript" language="javascript">
+         $(document).ready(function() {
+            $("div").click(function () {
+               var color = $(this).css("background-color");
+               var width = $(this).outerWidth( true );
+               $("#result").html("Outer Width is <span>" + width + "</span>.");
+               $("#result").css({'color': color, 'background-color':'white'});
+            });
+         });
+      </script>
+<style>
+         #div1{ margin:10px;padding:10px; border:2px solid #666; width:60px;}
+         #div2 { margin:15px;padding:15px; border:4px solid #666; width:60px;}
+         #div3 { margin:20px;padding:20px; border:6px solid #666; width:60px;}
+         #div4 { margin:25px;padding:25px; border:8px solid #666; width:60px;}
+</style>
+</head>
+<body>
+<p>Click on any square:</p>
+<span id="result"> </span>
+<div id="div1" style="background-color:orange;"></div>
+<div id="div2" style="background-color:green;"></div>
+<div id="div3" style="background-color:brown;"></div>
+<div id="div4" style="background-color:violet;"></div>
+</body>
+</html>  

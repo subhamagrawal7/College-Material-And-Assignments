@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE person[
+<!ELEMENT person (name)> 
+<!ELEMENT name (#PCDATA)> 
+
+
+]>
+
+<!-- must occur once, and only once -->
+<person>
+	<name>Hardi</name>
+	   
+	</person>
+
+

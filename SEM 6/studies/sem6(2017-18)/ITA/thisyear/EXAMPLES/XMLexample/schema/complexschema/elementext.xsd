@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="studentID">
+        <xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:integer">
+            
+                <xs:attribute name="stud_Name" type="xs:string" />
+				
+				</xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

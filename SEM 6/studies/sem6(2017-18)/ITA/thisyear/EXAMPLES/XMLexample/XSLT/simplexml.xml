@@ -1,0 +1,22 @@
+<?xml version = "1.0"?>  
+
+<class>   
+   <employee id = "001">  
+      <firstname>Aryan</firstname>   
+      <lastname>Gupta</lastname>   
+      <nickname>Raju</nickname>   
+      <salary>60000</salary>  
+   </employee>   
+   <employee id = "024">   
+      <firstname>Sonam</firstname>   
+      <lastname>Gupta</lastname>   
+      <nickname>Vinni</nickname>   
+      <salary>45000</salary>  
+   </employee>   
+   <employee id = "056">   
+      <firstname>Peter</firstname>   
+      <lastname>Symon</lastname>   
+      <nickname>John</nickname>   
+      <salary>20000</salary>   
+   </employee>   
+</class>  

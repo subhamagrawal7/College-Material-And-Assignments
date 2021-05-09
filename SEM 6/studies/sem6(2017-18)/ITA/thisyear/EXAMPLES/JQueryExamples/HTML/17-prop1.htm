@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#p1").html("attr('checked'): " + $("input").attr('checked')
+    + "<br>prop('checked'): " + $("input").prop('checked'));
+  });
+});
+</script>
+</head>
+<body>
+
+<p><b>Note:</b> Check and uncheck the checkbox and then click the button to refresh content.</p>
+<button>Check value of attr() and prop()</button>
+<br><br>
+
+<input id="check1" type="checkbox" >
+<label for="check1">Check me</label>
+<p id="p1"></p>
+
+</body>
+</html>

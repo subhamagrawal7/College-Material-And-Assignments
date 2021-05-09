@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<student> 
+
+<!-- An "elements-only" complex type contains an element that contains only other elements. -->
+
+<FirstName>Parth</FirstName>
+<LastName>123</LastName>        <!-- use string generate error -->	
+    
+</student>
