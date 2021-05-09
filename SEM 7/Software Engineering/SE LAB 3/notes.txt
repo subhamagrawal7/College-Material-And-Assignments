@@ -1,0 +1,50 @@
+The modifies clause lists what values visible to the caller may be modified by a function. Modifies
+clauses limit what values a function may modify, but they do not require that listed values are
+always modified
+
+--->since neither of the values used in the loop condition (x directly and glob1 through the call
+to f) is modified by the body of the loop. If the declaration of g is changed to include glob1 in the
+modifies clause no error is reported. 
+
+---->If an unconstrained function is called within the loop body, Splint will assume that it modifies a
+value used in the condition test and not report an infinite loop error, unless infloopsuncon is on
+
+---->A single fall through case may be marked by preceding
+the case keyword with /*@fallthrough@*/ to indicate explicitly that execution falls through to this
+case
+
+Writes beyond the end a buffer (buffer overflows) can usually be exploited make the program run
+arbitrary code. Attackers can exploit these programming bugs to replace the return address on the
+stack and place arbitrary code in memory thereby gaining full access to the machine
+
+maxSet(b) denotes the highest address beyond b that can be safely used as an lvalue
+It is inappropriate to read an uninitialized element or beyond the NULL terminator of a null terminated buffer.
+L-value: “l-value” refers to memory location which identifies an object. 
+l-value may appear as either left hand or right hand side of an assignment operator(=). 
+l-value often represents as identifier.
+r-value” refers to data value that is stored at some address in memory.
+
+---->there is no standard restriction on the length of the return value of getenv so this can cause a buffer overflow
+---->A safe version of updateEnv (such as updateEnvSafe in Figure 21) would ensure that the buffer is large enough to hold the
+environment variable string before copying. The requires clause means Splint will report a warning if a call to
+updateEnvSafe passed in a buffer as str that is not big enough to hold the value passed as strSize characters
+
+---->Macros are commonly used in C programs to implement constants or to mimic functions without the overhead of a function call.
+For example, square(i++) expands to i++ * i++. Not only does this give the incorrect result, 
+it has undefined behavior since the order in which the operands are evaluated is not defined
+ Splint will check that this constraint holds, if the parameter is annotated to be side effect free. That is, the
+expression corresponding to this parameter must not modify any state, so it does not matter how many times it is evaluated. 
+---->The sef annotation is used to denote a parameter that may not have any side effects. It is also an error to pass a macro parameter that is not annotated with sef as a sef macro
+parameter in the body of a macro definition.
+If the fcn-macros flag is on, Splint assumes all macros defined with parameter lists implement functions and 
+checks them accordingly. Parameterized macros are not expanded and are checked as functions with unknown result and parameter types
+
+Functions communicate with their calling environment through an interface
+By keeping interfaces narrow (restricting the amount of information visible across a function interface), 
+we can understand and implement functions independently
+---->There are no errors for sety – the call to setx modifies the value pointed to by its first parameter (y) as
+documented by the modifies clause. The checks mode turns on mustmod checking, so the second error
+concerning missing documented modifications is reported.
+A function with no modifies clause is an unconstrained function since there are no documented
+constraints on what it may modify. When an unconstrained function is called, it is checked
+differently from a function declared with a modifies clause.

@@ -1,0 +1,7 @@
+Historical pen and paper ciphers used in the past are sometimes known as classical ciphers. The_ include:
+
+1) Substitution cipher: the units of plainte^t are replaced with cipherte^t (e.g., Caesar cipher and one-time pad)
+Pol_alphabetic substitution cipher: a substitution cipher using multiple substitution alphabets (e.g., Vigenère cipher and Enigma machine)
+Pol_graphic substitution cipher: the unit of substitution is a sequence of two or more letters rather than just one (e.g., Pla_fair cipher)
+Transposition cipher: the cipherte^t is a permutation of the plainte^t (e.g., rail fence cipher)
+Historical ciphers are not generall_ used as a standalone encr_ption technique because the_ are quite eas_ to crack. Man_ of the classical ciphers, with the e^ception of the one-time pad, can be cracked using brute force.

@@ -1,0 +1,2 @@
+This line contains spaces:   Hello   World  This  is  sample  text.
+Here are numbers :           
