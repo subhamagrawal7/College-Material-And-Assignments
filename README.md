@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -16,6 +16,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/priteshtripathi7"><img src="https://avatars.githubusercontent.com/u/40422870?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pritesh Kumar Tripathi</b></sub></a><br /><a href="#content-priteshtripathi7" title="Content">🖋</a> <a href="#tutorial-priteshtripathi7" title="Tutorials">✅</a></td>
     <td align="center"><a href="https://github.com/sakshijain009"><img src="https://avatars.githubusercontent.com/u/62885857?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sakshi Jain</b></sub></a><br /><a href="#content-sakshijain009" title="Content">🖋</a> <a href="#tutorial-sakshijain009" title="Tutorials">✅</a></td>
     <td align="center"><a href="https://github.com/krithikha2001"><img src="https://avatars.githubusercontent.com/u/59526292?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Krithikha Bala</b></sub></a><br /><a href="#content-krithikha2001" title="Content">🖋</a> <a href="#tutorial-krithikha2001" title="Tutorials">✅</a></td>
+    <td align="center"><a href="https://twitter.com/Sankirtana212"><img src="https://avatars.githubusercontent.com/u/59257797?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sankirtana</b></sub></a><br /><a href="#content-geek-2002" title="Content">🖋</a> <a href="#tutorial-geek-2002" title="Tutorials">✅</a></td>
   </tr>
 </table>
 
