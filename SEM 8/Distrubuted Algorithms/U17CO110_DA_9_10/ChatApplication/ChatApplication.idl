@@ -1,0 +1,8 @@
+module ChatApplication {
+    interface Moderator {
+    	string login(in string username);
+        string sendMessage(in string username, in string mssg);
+        string getMessages();
+        string logout(in string username);
+    };
+};

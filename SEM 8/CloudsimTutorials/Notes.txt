@@ -1,0 +1,37 @@
+Cloudsim
+- Framework made in java
+- Simulates cloud services
+- Collection of Java Classes representing different features of cloud
+- It models DataCenter, Host, VM, Cloudlets
+DataCenter: It is a place which is a collection of resources (collection of hosts). This is a class in CloudSim and is modelled in real life as collection of physical machines.
+Host: It represents a physical machine. It has variables to represent memory, processors, id, scheduling scheme, etc.
+VM: Each host can have a virtual machine. On these VM, our task/applications are executed.
+Cloudlet: It represents a user task
+
+There are two main areas to be scheduled:
+i) Allocation of Processor to VM (Vm Scheduler) - Suppose Host has 2 cores/processors and there are 4 VMs on this Host then which Processor to which VM
+ii) Submission of Cloudlet to VM (Cloudlet Scheduler) - Which task to be given to VM?
+
+Space Shared - (kind of FCFS)Processor will be allocated to one VM at one time. Once task is completed by one VM then only it goes to the next VM.
+Time Shared - One Processor can be shared by 2 VMs at the same time. Context switching takes place.
+Now the above can happed for VM and for Cloudlet
+For Pic1.jpg
+a - VM Space shared, Cloudlet Space Shared
+b - VM Space Shared, Cloudlet Time Shared
+c - VM Time Shared, Cloudlet Space Shared
+d - VM Time Shared, Cloudlet Time Shared
+
+DataCenter Broker - This class models a broker, which is responsible for mediating negotiations between SaaS and Cloud providers. IT sits between the cloud provider and the user.
+DataCenter Characteristics - Configuration information of data center resources.
+VmAllocationPolicy - This class represents a provisioning policy that a VM monitor utilizes for allocating VMs to Hosts.
+FederatedDataCenter - Collection of different types of DataCenter.
+
+Initialize CloudSim
+Create DataCenter - HostList, PeList, Characteristics
+Create DataCenter Broker
+Create VM
+submit VM list to the broker
+Create Cloudlet
+submit Cloudlet list to the broker
+Starts the simulation
+Print results when simulation is over

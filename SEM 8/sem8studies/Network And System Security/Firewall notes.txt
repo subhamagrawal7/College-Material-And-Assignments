@@ -1,0 +1,14 @@
+DoS Attacks
+Examples: one-packet kill, land attack, TCP SYN flooding attack, smurf attack, WinFreeze, Loki, TFN, Trinoo, Stacheldraht
+
+Firewalls can help protect against DoS attacks by keeping nuisance traffic off your net but cannot eliminate IP spoofed packets. 
+
+Smurf attack - The Smurf attack is a distributed denial-of-service attack in which large numbers of Internet Control Message Protocol (ICMP) packets with the intended victim's spoofed source IP are broadcast to a computer network using an IP broadcast address.
+---------------------------------
+The key point to decide if you need application-level firewalls is to check if the layer3 and layer 4 info are enough to detect the attacks.  If so, packet filter should be fine.  Then you check if you need to maintains some states for ongoing traffic for detection.  If so, you will need stateful packet filters, otherwise, stateless packet filters will be sufficient.
+
+For SYN flooding attacks, remember we learned that counters of SYN-FIN or SYN-SYN/ACK can detect it. These info can be obtained at layer 4, so packet filters are fine. But you do need to keep past info (i.e., states, the counters).  So you need stateful packet filters.
+
+For smurf attacks, you only need to block all traffic to the broadcast IP address.  So a stateless packet filter is fine.
+
+Finally for BitTorrent, you will need to check the payload (i.e., app-level info) to match the signatures of BitTorrent for detection.  Here we assume that you can get a BitTorrent proxy to parse the protocol.  In that case, a BitTorrent firewall proxy can detect it.

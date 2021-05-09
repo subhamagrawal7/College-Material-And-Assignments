@@ -1,0 +1,14 @@
+Compile idl file
+idlj -fall  ../ChatApplication.idl
+
+Compile all java files
+javac *.java ChatApplication/*.java
+
+Start nameservice
+orbd -ORBInitialPort 1050&
+
+StartServer
+java ModeratorServer -ORBInitialPort 1050 -ORBInitialHost localhost&
+
+StartClient
+java ModeratorClient -ORBInitialPort 1050 -ORBInitialHost localhost
