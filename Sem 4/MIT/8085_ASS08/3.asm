@@ -1,0 +1,29 @@
+;ASSIGNMENT 8 Q3
+;A set of ASCII Hex digits is stored in the Input Buffer memory. Write a program to
+;convert these numbers into binary. Add these numbers in binary, and store the result
+;in the Output-Buffer memory
+MVI B,0AH;COUNTER
+MVI C,00H ;SUM REGISTER
+LXI D,2000H ;SOURCE POINTER FOR ASCIILXI H,2010H 
+LXI H,2010H ;DESTINATION POINTER FOR EQUIVIVALENT BINARY
+
+LOOP: LDAX D
+CALL ASCBIN
+MOV M,A 
+MOV A,C
+ADD M
+MOV C,A 
+INX H
+INX D
+DCR B
+JNZ LOOP
+MOV M,C 
+HLT
+
+;INPUT A - ASCII CODE
+;OUTPUT A - BINARY EQUIVIVALENT
+ASCBIN: SUI 30H
+CPI 0AH ;IF LESS THAN 10 RETURN
+RC
+SUI 07H ;FOR A-F
+RET

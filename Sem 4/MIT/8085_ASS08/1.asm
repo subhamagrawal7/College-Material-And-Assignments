@@ -1,0 +1,39 @@
+;Program1
+;convert a given number of binary data bytes into their BCD 
+;equivalents, and store them as unpacked BCDs in the output buffer
+MVI C,04H ; COUNTER
+LXI D,2010H ; DESTINATION
+LXI H,2000H ; SOURCE
+LOOP: MOV A,M
+CALL bin_bcd
+DCR C
+INX H
+JNZ LOOP
+HLT
+
+bin_bcd: PUSH H
+MVI H,0H ; HUNDREDS
+MVI L,0H ; TENS
+
+S1: CPI 64H
+JC S2
+SUI 64H
+INR H
+JMP S1
+
+S2: CPI 0AH
+JC S3
+SUI 0AH
+INR L
+JMP S2
+
+S3: STAX D ; STORE 1'S POSITION
+INX D
+MOV A,L
+STAX D ; STORE 10'S POSITION
+INX D
+MOV A,H
+STAX D ; STORE 100'S POSITION
+INX D
+POP H
+RET
