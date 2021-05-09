@@ -1,0 +1,19 @@
+;Problem 4
+;ASCENDING
+MVI B,04H
+start: LXI H,1500h
+MVI C,03H
+back: MOV A,M
+INX H
+CMP M
+JC skip
+MOV D,M
+MOV M,A
+DCX H
+MOV M,D
+INX H
+skip: DCR C
+JNZ back
+DCR B
+JNZ start
+HLT
