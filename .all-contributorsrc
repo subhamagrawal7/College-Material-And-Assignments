@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "subhamagrawal7",
+      "name": "Subham Agrawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34346812?v=4",
+      "profile": "https://github.com/subhamagrawal7",
+      "contributions": [
+        "content",
+        "tutorial"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "College-Material-And-Assignments",
+  "projectOwner": "subhamagrawal7",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
