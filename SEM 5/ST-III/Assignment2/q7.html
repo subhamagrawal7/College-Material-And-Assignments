@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Question 7</title>
+    <style>
+      .class1 {
+        background: lightblue;
+      }
+      .class2 {
+        background: green;
+      }
+      .img2 {
+        height: 300px;
+        width: 600px;
+      }
+      .img3 {
+        height: 100px;
+        width: 200px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // alert on double click
+        $("#para1").dblclick(function() {
+          window.alert("you double clicked the text!!");
+        });
+
+        //toggle background color
+        $("#para2").dblclick(function() {
+          $("#para2").toggleClass("class2");
+        });
+
+        // zoom in and zoom out image
+        $("#img1").dblclick(function() {
+          $("#img1").toggleClass("img3");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <p id="para1">
+      if you double click this paragraph,it will alert a message.
+    </p>
+
+    <br />
+
+    <p id="para2" class="class1">
+      If you double click this paragraph,it will toggle its background color.
+    </p>
+
+    <br />
+
+    <img id="img1" src="img30.jpg" class="img2" ; />
+  </body>
+</html>

@@ -1,0 +1,68 @@
+;Question 1
+MVI A,32H ;Moving 32H in accumulator
+STA 4000H 
+
+;Question 2
+LDA 4000H ;Load the data at 16 bit address in accumulator
+MOV B,A   ;Copy the data of accumulator in register B
+LDA 2000H 
+STA 4000H ;Set the data of 4000H to accumulator i.e.2000H 
+MOV A,B 
+STA 2000H
+
+;Question 3
+MVI A,50H 
+STA 4000H 
+MVI A,30H 
+STA 4001H
+
+LDA 4000H 
+MOV B,A 
+LDA 4001H 
+ADD B     ;Add data of B with accumulator  
+STA 4002H 
+
+;Question 4
+LDA 2000H 
+MOV B,A 
+LDA 4000H 
+SUB B     ;Subtract data of B from accumulator
+STA 4002H 
+
+;Question 5
+;MVI A,40H ;Copy 40H in Accumulator
+;STA 4003H ;Set data at memory 4003H as Accumulator data
+LDA 4000H 
+MOV B,A 
+LDA 4002H 
+ADD B 
+STA 4004H ;Store result of least significant bits in 4004H
+
+LDA 4001H 
+MOV B,A 
+LDA 4003H 
+ADC B     ;Add with carry
+STA 4005H ;Store result of most significant bits in 4005H
+
+;Question 6
+LDA 4000H 
+MOV B,A 
+LDA 4001H 
+ADD B 
+STA 4002H 
+MVI A,00H 
+ADC A     ;Add along with carry in A
+STA 4003H 
+
+;Question 7
+MVI A,00H 
+CMA       ;Complement accumulator
+STA 4006H 
+
+;Question 8
+MVI A,02H 
+CMA       ;Complement accumulator
+ADI 01H   ;Add 01H to convert into two complement
+STA 4007H  
+
+hlt

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Question 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        setInterval(function() {
+          $(".blink").fadeOut(300);
+          $(".blink").fadeIn(300);
+        }, 800);
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      jQuery is a lightweight, "write less, do more", JavaScript library. The
+      purpose of jQuery is to make it
+      <span class="blink"> much easier to use JavaScript</span> on your website.
+      jQuery takes a lot of common tasks that require many lines of JavaScript
+      code to accomplish, and wraps them into methods that you can call with a
+      single line of code.
+    </p>
+  </body>
+</html>

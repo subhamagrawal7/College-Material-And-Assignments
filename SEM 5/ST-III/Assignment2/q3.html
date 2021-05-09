@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Question 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#phone").on("change keyup paste click", function() {
+          var s = $("#phone").val();
+          for (var i = 0; i < s.length; i++) {
+            if (!(s.charAt(i) >= 0 && s.charAt(i) <= 9)) {
+              $("#phone").css({ border: "3px solid red" });
+
+              //alert("Only numbers accepted !");
+            } else {
+              $("#phone").css({ border: "3px solid blue" });
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <p>INPUT</p>
+    <input type="text" name="phone" id="phone" />
+  </body>
+</html>

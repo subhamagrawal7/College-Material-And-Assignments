@@ -1,0 +1,17 @@
+Error: Illegal Addressing mode
+1) Back label must not be used
+2) Indent Properly the label and instructions
+3) use one reg and SI for performing transfer/copy
+
+Initialize dx with str+2 as first 2 chars are $ and . and adjust accordingly
+
+For declaring string and performing appropriate methods
+str1 db 99
+	 db 100 dup('$')
+	
+For procedure
+print PROC
+
+
+ret
+print ENDP

@@ -1,0 +1,12 @@
+
+h1, h2, h3, h4, h5, h6 {align: center; color : red}
+hr {color: blue}
+body { background-color: white }
+.code { color: blue}
+.var { color: blue}
+.math { color: blue}
+.def {color: red}
+.figure {color: red}
+.table {color: red}
+.coderule { color: blue}
+.tablerule { color: red}

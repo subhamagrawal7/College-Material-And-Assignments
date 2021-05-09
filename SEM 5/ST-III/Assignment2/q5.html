@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Question 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#img").on("contextmenu", function() {
+          var src =
+            $(this).attr("src") == "img10.jpg" ? "img20.png" : "img10.jpg"; //Select the attribute of the current HTML element
+
+          $(this).attr("src", src); //sets the new value of "src" attrubute
+
+          return false;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <img id="img" src="img10.jpg" style="height:200px; width:200px" ; />
+    </div>
+  </body>
+</html>

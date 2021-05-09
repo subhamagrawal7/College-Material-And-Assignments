@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Question 6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // highlight important word
+        $("#button").click(function() {
+          $(".imp").css("color", "blue");
+          $(".imp").css("font-weight", "bold");
+        });
+
+        //time difference between two events
+        var lastt, tdiff;
+        $("#para4").click(function(event) {
+          if (lastt) {
+            tdiff = (event.timeStamp - lastt) / 1000;
+            $("#div1").append("Time since last event: " + tdiff + "sec.<br>");
+          } else {
+            $("#div1").append("<br>Click again.<br>");
+          }
+          lastt = event.timeStamp;
+        });
+
+        //ascii value of input
+        $("#ascii").keyup(function(e) {
+          var str = $("#ascii").val();
+          $("#div2").append(str.charCodeAt(str.length - 1) + " ");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <p>
+      On click,it will highlight the word
+      <span class="imp" style="color: lightblue;">important</span>.
+    </p>
+    <button type="submit" name="submit" id="button">Submit</button>
+
+    <br />
+
+    <p id="para4">
+      Click on this paragraph 2 times to display the time difference between the
+      clicks.
+    </p>
+    <div id="div1"></div>
+
+    <br />
+
+    <input type="text" id="ascii" name="ascii" />
+    <div id="div2">ASCII Value:</div>
+  </body>
+</html>

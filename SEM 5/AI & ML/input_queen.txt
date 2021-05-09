@@ -1,0 +1,15 @@
+%include libraray before running
+use_module(library(clpfd)).
+
+
+
+%to find solution for n problem
+N=4,
+length(Qs,N),
+maplist(between(1,N),Qs),
+n_queens(N,Qs).
+
+
+%to check a particular list if its a solution
+
+n_queens(4,[2,4,1,3]).
