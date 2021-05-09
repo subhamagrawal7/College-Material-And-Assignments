@@ -54,6 +54,16 @@
         "content",
         "tutorial"
       ]
+    },
+    {
+      "login": "Himified",
+      "name": "Himani Verma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62880286?v=4",
+      "profile": "https://github.com/Himified",
+      "contributions": [
+        "content",
+        "tutorial"
+      ]
     }
   ],
   "contributorsPerLine": 7,
