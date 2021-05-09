@@ -44,6 +44,16 @@
         "content",
         "tutorial"
       ]
+    },
+    {
+      "login": "geek-2002",
+      "name": "Sankirtana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59257797?v=4",
+      "profile": "https://twitter.com/Sankirtana212",
+      "contributions": [
+        "content",
+        "tutorial"
+      ]
     }
   ],
   "contributorsPerLine": 7,
