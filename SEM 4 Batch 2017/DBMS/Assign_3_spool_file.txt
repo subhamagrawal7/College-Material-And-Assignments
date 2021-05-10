@@ -1,0 +1,549 @@
+SQL> CREATE TABLE employees (
+  2  empno INT NOT NULL,
+  3  emp_name VARCHAR2(30) NOT NULL,
+  4  emp_join_date DATE,
+  5  emp_status char(1),
+  6  PRIMARY KEY(empno)
+  7  );
+
+Table created.
+
+SQL> CREATE TABLE project (
+  2  project_code VARCHAR(4) NOT NULL,
+  3  project_description VARCHAR2(40) NOT NULL,
+  4  project_start_date DATE NOT NULL,
+  5  projrct_end_date DATE,
+  6  PRIMARY KEY(project_code)
+  7  );
+
+Table created.
+
+SQL>  CREATE TABLE project_allocation (
+  2  project_code VARCHAR(4) NOT NULL,
+  3  empno INT NOT NULL,
+  4  emp_proj_alloc_date DATE,
+  5  emp_proj_release_date DATE,
+  6  FOREIGN KEY(project_code) REFERENCES project(project_code),
+  7  FOREIGN KEY(empno) REFERENCES employees(empno)
+  8  );
+
+Table created.
+
+SQL> DESC employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(38)
+ EMP_NAME                                  NOT NULL VARCHAR2(30)
+ EMP_JOIN_DATE                                      DATE
+ EMP_STATUS                                         CHAR(1)
+
+SQL> DESC project;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PROJECT_CODE                              NOT NULL VARCHAR2(4)
+ PROJECT_DESCRIPTION                       NOT NULL VARCHAR2(40)
+ PROJECT_START_DATE                        NOT NULL DATE
+ PROJRCT_END_DATE                                   DATE
+
+SQL> DESC project_allocation;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PROJECT_CODE                              NOT NULL VARCHAR2(4)
+ EMPNO                                     NOT NULL NUMBER(38)
+ EMP_PROJ_ALLOC_DATE                                DATE
+ EMP_PROJ_RELEASE_DATE                              DATE
+
+SQL> INSERT INTO EMPLOYEES VALUES(101,'JHONNY','01-JUL-2005','C');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEES VALUES(116,'NAYAK','16-AUG-2005','C');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEES VALUES(202,'MEERA','30-JAN-2006','C');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEES VALUES(205,'RAVI','11-FEB-2006','C');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEES VALUES(304,'HARI','25-NOV-2006','P');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEES VALUES(307,'NANCY','15-JAN-2007','P');
+
+1 row created.
+
+SQL> INSERT INTO EMPLOYEES VALUES(403,'NICK','21-JAN-2007','P');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT VALUES('P001','ENVIRONMENTAL POLLUTION','02-AUG-2005','11-DEC-2006');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT VALUES('P002','LEARNING CURVE','01-FEB-2006','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT VALUES('P003','EFFECTS OF IT','03-JAN-2007','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P001',101,'01-Aug-2005','11-Dec-2006');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P001',116,'16-Aug-2005','11-Dec-2006');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P002',202,'01-Feb-2006','14-Jan-2007');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P002',307,'15-Jan-2007','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P002',205,'11-Feb-2006','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P003',403,'21-Jan-2007','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P003',304,'03-Jan-2007','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P003',101,'03-Jan-2007','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P003',116,'03-Jan-2007','');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION VALUES ('P003',202,'15-Jan-2007','');
+
+1 row created.
+
+SQL> SELECT * FROM employees;
+
+     EMPNO EMP_NAME                       EMP_JOIN_ E                           
+---------- ------------------------------ --------- -                           
+       101 JHONNY                         01-JUL-05 C                           
+       116 NAYAK                          16-AUG-05 C                           
+       202 MEERA                          30-JAN-06 C                           
+       205 RAVI                           11-FEB-06 C                           
+       304 HARI                           25-NOV-06 P                           
+       307 NANCY                          15-JAN-07 P                           
+       403 NICK                           21-JAN-07 P                           
+
+7 rows selected.
+
+SQL> SELECT * FROM project;
+
+PROJ PROJECT_DESCRIPTION                      PROJECT_S PROJRCT_E               
+---- ---------------------------------------- --------- ---------               
+P001 ENVIRONMENTAL POLLUTION                  02-AUG-05 11-DEC-06               
+P002 LEARNING CURVE                           01-FEB-06                         
+P003 EFFECTS OF IT                            03-JAN-07                         
+
+SQL> SELECT * FROM project_allocation;
+
+PROJ      EMPNO EMP_PROJ_ EMP_PROJ_                                             
+---- ---------- --------- ---------                                             
+P001        101 01-AUG-05 11-DEC-06                                             
+P001        116 16-AUG-05 11-DEC-06                                             
+P002        202 01-FEB-06 14-JAN-07                                             
+P002        307 15-JAN-07                                                       
+P002        205 11-FEB-06                                                       
+P003        403 21-JAN-07                                                       
+P003        304 03-JAN-07                                                       
+P003        101 03-JAN-07                                                       
+P003        116 03-JAN-07                                                       
+P003        202 15-JAN-07                                                       
+
+10 rows selected.
+
+SQL> SELECT project_description, emp_name
+  2  FROM ((project_allocation INNER JOIN employees ON project_allocation.empno = employees.empno)
+  3  INNER JOIN project ON project_allocation.project_code = project.project_code);
+
+PROJECT_DESCRIPTION                      EMP_NAME                               
+---------------------------------------- ------------------------------         
+ENVIRONMENTAL POLLUTION                  JHONNY                                 
+ENVIRONMENTAL POLLUTION                  NAYAK                                  
+LEARNING CURVE                           MEERA                                  
+LEARNING CURVE                           NANCY                                  
+LEARNING CURVE                           RAVI                                   
+EFFECTS OF IT                            NICK                                   
+EFFECTS OF IT                            HARI                                   
+EFFECTS OF IT                            JHONNY                                 
+EFFECTS OF IT                            NAYAK                                  
+EFFECTS OF IT                            MEERA                                  
+
+10 rows selected.
+
+SQL> SELECT emp_name AS "Employee Name" FROM employees WHERE emp_status = 'C';
+
+Employee Name                                                                   
+------------------------------                                                  
+JHONNY                                                                          
+NAYAK                                                                           
+MEERA                                                                           
+RAVI                                                                            
+
+SQL> spool off;
+
+SQL> SELECT Emp_name FROM Employees WHERE Emp_join_date LIKE '__-NOV-__';
+
+EMP_NAME                                                                        
+------------------------------                                                  
+HARI                                                                            
+                         
+SQL> select project_description from project where project_start_date>'01-JAN-2006';
+
+PROJECT_DESCRIPTION                                                             
+----------------------------------------                                        
+LEARNING CURVE                                                                  
+EFFECTS OF IT                                                                   
+
+SQL> SELECT Emp_name FROM
+  2  ((Project_allocation INNER JOIN Employees ON Project_allocation.Empno = Employees.Empno) INNER JOIN
+  3  Project ON Project_allocation.project_code = Project.project_code)
+  4  WHERE Project_description = 'Effects of IT';
+
+EMP_NAME                                                                        
+------------------------------                                                  
+NICK                                   
+HARI                                   
+JHONNY                                 
+NAYAK                                  
+MEERA
+
+SQL> SELECT * FROM Project_allocation;
+
+PROJ      EMPNO EMP_PROJ_ EMP_PROJ_                                             
+---- ---------- --------- ---------                                             
+P001        101 01-AUG-05 11-DEC-06                                             
+P001        116 16-AUG-05 11-DEC-06                                             
+P002        202 01-FEB-06 14-JAN-07                                             
+P002        307 15-JAN-07                                                       
+P002        205 11-FEB-06                                                       
+P003        403 21-JAN-07                                                       
+P003        304 03-JAN-07                                                       
+P003        101 03-JAN-07                                                       
+P003        116 03-JAN-07                                                       
+P003        202 15-JAN-07                                                       
+
+10 rows selected.
+ 
+SQL> SELECT * FROM Project;
+
+PROJ PROJECT_DESCRIPTION                      PROJECT_S PROJRCT_E               
+---- ---------------------------------------- --------- ---------               
+P001 ENVIRONMENTAL POLLUTION                  02-AUG-05 11-DEC-06               
+P002 LEARNING CURVE                           01-FEB-06                         
+P003 EFFECTS OF IT                            03-JAN-07                         
+
+SQL> select Project_description from Project where Projrct_end_date is NULL;
+
+PROJECT_DESCRIPTION                                                             
+----------------------------------------                                        
+LEARNING CURVE                                                                  
+EFFECTS OF IT                                                                   
+
+SQL> select Emp_name from (Project_allocation inner join Employees on Project_allocation.Empno =
+  2  Employees.Empno)
+  3  where Project_code = 'P002' and Emp_proj_release_date is not null;
+
+EMP_NAME                                                                        
+------------------------------                                                  
+MEERA                                                                           
+
+SQL> select Projrct_end_date - Project_start_date from Project where Project_code = 'P002';
+
+PROJRCT_END_DATE-PROJECT_START_DATE                                             
+-----------------------------------                                             
+42                                                           
+
+SQL>  select Emp_name , Emp_proj_release_date - Emp_proj_alloc_date  from
+  2  Project_allocation,Employees
+  3  where Project_allocation.Empno = Employees.Empno;
+
+EMP_NAME                       EMP_PROJ_RELEASE_DATE-EMP_PROJ_ALLOC_DATE        
+------------------------------ -----------------------------------------        
+JHONNY                                                               497        
+NAYAK                                                                482        
+MEERA                                                                347        
+NANCY                                                                           
+RAVI                                                                            
+NICK                                                                            
+HARI                                                                            
+JHONNY                                                                          
+NAYAK                                                                           
+MEERA                                                                           
+
+10 rows selected.
+
+SQL> ALTER TABLE Project
+  2  ADD manager_id INT;
+
+Table altered.
+
+SQL> UPDATE Project
+  2  SET manager_id = 101 WHERE Project_code = 'P001';
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE Project
+  2  SET manager_id = 202 WHERE Project_code = 'P002';
+
+1 row updated.
+
+SQL> UPDATE Project
+  2  SET manager_id = 116 WHERE Project_code = 'P003';
+
+1 row updated.
+
+SQL> DESC Project;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PROJECT_CODE                              NOT NULL VARCHAR2(4)
+ PROJECT_DESCRIPTION                       NOT NULL VARCHAR2(40)
+ PROJECT_START_DATE                        NOT NULL DATE
+ PROJRCT_END_DATE                                   DATE
+ MANAGER_ID                                         NUMBER(38)
+
+SQL> INSERT INTO Project VALUES ('P004', 'Election Rage', '01-MAR-07',NULL,NULL);
+
+1 row created.
+
+SQL> DELETE FROM Project WHERE Project_description = 'Effects of IT';
+
+0 rows deleted.
+
+SQL> SELECT * FROM Project;
+
+PROJ PROJECT_DESCRIPTION                      PROJECT_S PROJRCT_E MANAGER_ID    
+---- ---------------------------------------- --------- --------- ----------    
+P001 ENVIRONMENTAL POLLUTION                  02-AUG-05 11-DEC-06        101    
+P002 LEARNING CURVE                           01-FEB-06                  202    
+P003 EFFECTS OF IT                            03-JAN-07                  116    
+P004 Election Rage                            01-MAR-07                         
+
+SQL> DELETE FROM Project WHERE Project_description='Effects of IT';
+
+0 rows deleted.
+
+SQL> select * from Project where Projrct_end_date - Project_start_date >13*30;
+
+PROJ PROJECT_DESCRIPTION                      PROJECT_S PROJRCT_E MANAGER_ID    
+---- ---------------------------------------- --------- --------- ----------    
+P001 ENVIRONMENTAL POLLUTION                  02-AUG-05 11-DEC-06        101    
+
+SQL> select Project_code,count(*) from Project_allocation where Emp_proj_alloc_date<'1-FEB-07'or
+  2  Emp_proj_release_date>'28-FEB-07'
+  3  group by Project_code;
+
+PROJ   COUNT(*)                                                                 
+---- ----------                                                                 
+P001          2                                                                 
+P002          3                                                                 
+P003          5                                                                 
+
+SQL> SELECT * FROM Borrows;
+
+    LOANNO CNAME                BNAME                    AMOUNT                 
+---------- -------------------- -------------------- ----------                 
+       201 ANIL                 VRCE                       1000                 
+       206 MEHUL                AJNI                       1000                 
+       311 SUNIL                DHARAMPETH                 1000                 
+       321 MADHURI              ANDHERI                    1000                 
+       375 PRAMOD               VIRAR                      1000                 
+       481 KRANTI               NEHRU PLACE                1000                 
+
+6 rows selected.
+
+SQL> SELECT * FROM Customers;
+
+CNAME                CITY                                                       
+-------------------- --------------------                                       
+ANIL                 CALCUTTA                                                   
+SUNIL                DELHI                                                      
+MEHUL                BARODA                                                     
+MANDAR               PATNA                                                      
+MADHURI              NAGPUR                                                     
+PRAMOD               NAGPUR                                                     
+SANDIP               SURAT                                                      
+SHIVANI              BOMBAY                                                     
+KRANTI               BOMBAY                                                     
+NAREN                BOMBAY                                                     
+
+10 rows selected.
+
+SQL> SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY;
+
+CITY                   COUNT(*)                                                 
+-------------------- ----------                                                 
+BARODA                        1                                                 
+BOMBAY                        3                                                 
+CALCUTTA                      1                                                 
+DELHI                         1                                                 
+NAGPUR                        2                                                 
+PATNA                         1                                                 
+SURAT                         1                                                 
+
+7 rows selected.
+
+SQL>  SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY WHERE COUNT > 2;
+ SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY WHERE COUNT > 2
+                                                   *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY WHERE COUNT(*)>2;
+SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY WHERE COUNT(*)>2
+                                                  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY WHERE (SELECT COUNT(*) FROM Customers GROUP BY CITY > 2);
+SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY WHERE (SELECT COUNT(*) FROM Customers GROUP BY CITY > 2)
+                                                  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> SELECT CITY,COUNT(*) FROM Customers WHERE COUNT(*) > 2 GROUP BY CITY;
+SELECT CITY,COUNT(*) FROM Customers WHERE COUNT(*) > 2 GROUP BY CITY
+                                          *
+ERROR at line 1:
+ORA-00934: group function is not allowed here 
+
+
+SQL> SELECT CITY,COUNT(*) AS "Counting" FROM Customers WHERE "Counting" > 2 GROUP BY CITY;
+SELECT CITY,COUNT(*) AS "Counting" FROM Customers WHERE "Counting" > 2 GROUP BY CITY
+                                                        *
+ERROR at line 1:
+ORA-00904: "Counting": invalid identifier 
+
+
+SQL>  SELECT CITY,COUNT(*) FROM Customers GROUP BY CITY HAVING COUNT(*) >2;
+
+CITY                   COUNT(*)                                                 
+-------------------- ----------                                                 
+BOMBAY                        3                                                 
+
+SQL> select Empno,Project_code , Emp_proj_release_date - Emp_proj_alloc_date as "Numbeer of Days" from
+  2  Project_allocation;
+
+     EMPNO PROJ Numbeer of Days                                                 
+---------- ---- ---------------                                                 
+       101 P001             497                                                 
+       116 P001             482                                                 
+       202 P002             347                                                 
+       307 P002                                                                 
+       205 P002                                                                 
+       403 P003                                                                 
+       304 P003                                                                 
+       101 P003                                                                 
+       116 P003                                                                 
+       202 P003                                                                 
+
+10 rows selected.
+
+SQL> CREATE TABLE project_allocation_new (
+  2       project_code VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES project(project_code),
+  3       empno INT NOT NULL FOREIGN KEY REFERENCES employees(empno),
+  4      emp_proj_alloc_date DATE,
+  5      emp_proj_release_date DATE
+  6     );
+     project_code VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES project(project_code),
+                                      *
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> CREATE TABLE project_allocation_new (
+  2      project_code VARCHAR(4) NOT NULL,
+  3      empno INT NOT NULL,
+  4      emp_proj_alloc_date DATE,
+  5      emp_proj_release_date DATE,
+  6      FOREIGN KEY(project_code) REFERENCES project(project_code),
+  7      FOREIGN KEY(empno) REFERENCES employees(empno)
+  8      );
+
+Table created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P001',101,'01-Aug-2005','11-Dec-2006');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P001',116,'16-Aug-2005','11-Dec-2006');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P002',202,'01-Feb-2006','14-Jan-2007');
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P002',307,'15-Jan-2007',NULL);
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P002',205,'11-Feb-2006',NULL);
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P003',403,'21-Jan-2007',NULL);
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P003',304,'03-Jan-2007',NULL);
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P003',101,'03-Jan-2007',NULL);
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P003',116,'03-Jan-2007',NULL);
+
+1 row created.
+
+SQL> INSERT INTO PROJECT_ALLOCATION_NEW VALUES ('P003',202,'15-Jan-2007',NULL);
+
+1 row created.
+
+SQL> DELETE FROM PROJECT_ALLOCATION_NEW;
+
+10 rows deleted.
+
+SQL> SELECT * FROM PROJECT_ALLOCATION_NEW;
+
+no rows selected
+
+SQL> DELETE TABLE PROJECT_ALLOCATION_NEW;
+DELETE TABLE PROJECT_ALLOCATION_NEW
+       *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> DROP TABLE PROJECT_ALLOCATION_NEW;
+
+Table dropped.
+
+SQL> spool off;
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Area</title>
+	<script type="text/javascript">
+		var l,b,a;
+		function area(){
+			l = document.getElementById('length').value;
+			b = document.getElementById('breadth').value;
+			a = l * b;
+			document.getElementById('result').value=a;
+		}
+	</script>
+</head>
+<body>
+	<p>Enter the length:</p>
+	<input type="number" id="length">
+	<p>Enter the Breadth:</p>
+	<input type="number" id="breadth">
+	<br>
+	<br>
+	<button onclick="area()">Calculate area</button>
+	<br>
+	<br>
+	<input type="number" id="result">
+</body>
+</html>

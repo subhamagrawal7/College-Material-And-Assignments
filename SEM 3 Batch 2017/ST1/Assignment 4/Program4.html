@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Marquee</title>
+	<style type="text/css">
+		div{
+			height: 10%;
+			border: 2px solid black;
+		}
+		img{
+			height:20%;
+			width: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>With text</h1>
+	<div><marquee direction="right">This text will go right.</marquee></div>
+	<br>
+	<div><marquee direction="left">This text will go left.</marquee></div>
+	<br>
+	<div><marquee direction="up">This text will go up.</marquee></div>
+	<br>
+	<div><marquee direction="right" width="50%">This text will go right with width of 50%.</marquee></div>
+	<br>
+	<div><marquee direction="down" height="100%">This text will go down with height of 100%.</marquee></div>
+	<br>
+	<div><marquee direction="right" scrolldelay="130">This text will go right with scroll delay of 130 milliseconds.</marquee></div>
+	<br>
+	<div><marquee direction="right" scrollamount="10">This text will go right with scroll amount of 10px persecond.</marquee></div>
+	<br>
+	<div><marquee direction="right" scrollamount="10" loop="1">This text will go right only once</marquee></div>
+	<br>
+	<div><marquee scrollamount="10" hspace="20%">This text will go right with hspace 20 px</marquee></div>
+	<br>
+	<div><marquee direction="down" scrollamount="2" vspace="10px">This text will go right with vspace 10 px</marquee></div>
+	<br>
+	<h1>With images</h1>
+	<marquee direction="right">
+		<img src="august1.jpg">
+	</marquee>
+	<br>
+	<marquee direction="left"><img src="august1.jpg"></marquee>
+	<br>
+	<marquee direction="up"><img src="august1.jpg"></marquee>
+</body>
+</html>

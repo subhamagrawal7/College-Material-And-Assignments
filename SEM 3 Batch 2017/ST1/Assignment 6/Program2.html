@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Addition and Subtraction</title>
+	<script type="text/javascript">
+		var n1,n2,r;
+		function add(){
+			n1 = document.getElementById('num1').value;
+			n2 = document.getElementById('num2').value;
+			// we have used + ahead of the numbers to take the integer numbers
+			r = +n1 + +n2;
+			document.getElementById('res1').value=r;
+		}
+		function sub(){
+			n1 = document.getElementById('num1').value;
+			n2 = document.getElementById('num2').value;
+			r = +n1 - +n2
+			document.getElementById('res2').value=r;
+		}
+	</script>
+</head>
+<body>
+	<p>Enter the first number:</p>
+	<input type="number" id="num1">
+	<p>Enter the second number:</p>
+	<input type="number" id="num2">
+	<br>
+	<br>
+	<button onclick="add()">Addition</button>
+	<br>
+	<br>
+	<input type="number" id="res1">
+	<br><br>
+	<button onclick="sub()">Subtraction</button>
+	<br>
+	<br>
+	<input type="number" id="res2">
+</body>
+</html>

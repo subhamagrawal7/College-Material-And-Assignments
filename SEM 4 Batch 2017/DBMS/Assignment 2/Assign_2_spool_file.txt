@@ -1,0 +1,400 @@
+SQL> CREATE TABLE deposits (
+  2      ACTNO INT NOT NULL,
+  3      CNAME VARCHAR(20),
+  4      BNAME VARCHAR(20),
+  5      AMOUNT NUMERIC(6,2),
+  6      ADATE DATE,
+  7      PRIMARY KEY (ACTNO)
+  8  );
+
+Table created.
+
+SQL> CREATE TABLE branches (
+  2      BNAME VARCHAR(20),
+  3      CITY VARCHAR(20)
+  4  );
+
+Table created.
+
+SQL> CREATE TABLE customers (
+  2      CNAME VARCHAR(20),
+  3      CITY VARCHAR(20)
+  4  );
+
+Table created.
+
+SQL> CREATE TABLE borrows (
+  2      LOANNO INT NOT NULL,
+  3      CNAME VARCHAR(20),
+  4      BNAME VARCHAR(20),
+  5      AMOUNT NUMERIC(6,2),
+  6      PRIMARY KEY (LOANNO)
+  7  );
+
+Table created.
+
+SQL> INSERT INTO deposits VALUES(100,'ANIL','VRCE','1000','1-MAR-95');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(101,'SUNIL','AJNI','5000','4-JAN-96');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(102,'MEHUL','KAROLBAGH','3500','17-NOV-95');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(104,'MADHURI','CHANDI','1200','17-DEC-95');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(105,'PRAMOD','M.G.ROAD','3000','27-MAR-96');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(106,'SANDEEP','ANDHERI','2000','31-MAR-96');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(107,'SHIVANI','VIRAR','1000','5-SEP-95');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(108,'KRANTI','NEHRU PLACE','5000','2-JUL-95');
+
+1 row created.
+
+SQL> INSERT INTO deposits VALUES(109,'MINU','POWAI','7000','10-AUG-95');
+
+1 row created.
+
+SQL> SELECT * FROM deposits;
+
+     ACTNO CNAME                BNAME                    AMOUNT ADATE           
+---------- -------------------- -------------------- ---------- ---------       
+       100 ANIL                 VRCE                       1000 01-MAR-95       
+       101 SUNIL                AJNI                       5000 04-JAN-96       
+       102 MEHUL                KAROLBAGH                  3500 17-NOV-95       
+       104 MADHURI              CHANDI                     1200 17-DEC-95       
+       105 PRAMOD               M.G.ROAD                   3000 27-MAR-96       
+       106 SANDEEP              ANDHERI                    2000 31-MAR-96       
+       107 SHIVANI              VIRAR                      1000 05-SEP-95       
+       108 KRANTI               NEHRU PLACE                5000 02-JUL-95       
+       109 MINU                 POWAI                      7000 10-AUG-95       
+
+9 rows selected.
+
+
+SQL> INSERT INTO branches VALUES('VRCE','NAGPUR');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('AJNI','NAGPUR');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('KAROLBAGH','DELHI');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('CHANDI','DELHI');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('DHARAMPETH','NAGPUR');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('M.G.ROAD','BANGALORE');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('ANDHERI','BOMBAY');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('VIRAR','BOMBAY');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('NEHRU PLACE','DELHI');
+
+1 row created.
+
+SQL> INSERT INTO branches VALUES('POWAI','BOMBAY');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('ANIL','CALCUTTA');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('SUNIL','DELHI');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('MEHUL','BARODA');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('MANDAR','PATNA');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('MADHURI','NAGPUR');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('PRAMOD','NAGPUR');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('SANDIP','SURAT');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('SHIVANI','BOMBAY');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('KRANTI','BOMBAY');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMERS VALUES('NAREN','BOMBAY');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO borrows VALUES(201,'ANIL','VRCE',1000);
+
+1 row created.
+
+SQL> INSERT INTO borrows VALUES(206,'MEHUL','AJNI',5000);
+
+1 row created.
+
+SQL> INSERT INTO borrows VALUES(311,'SUNIL','DHARAMPETH',3000);
+
+1 row created.
+
+SQL> INSERT INTO borrows VALUES(321,'MADHURI','ANDHERI',2000);
+
+1 row created.
+
+SQL> INSERT INTO borrows VALUES(375,'PRAMOD','VIRAR',8000);
+
+1 row created.
+
+SQL> INSERT INTO borrows VALUES(481,'KRANTI','NEHRU PLACE',3000);
+
+1 row created.
+
+SQL> DESC deposits;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACTNO                                     NOT NULL NUMBER(38)
+ CNAME                                              VARCHAR2(20)
+ BNAME                                              VARCHAR2(20)
+ AMOUNT                                             NUMBER(6,2)
+ ADATE                                              DATE
+
+SQL> DESC borrows;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ LOANNO                                    NOT NULL NUMBER(38)
+ CNAME                                              VARCHAR2(20)
+ BNAME                                              VARCHAR2(20)
+ AMOUNT                                             NUMBER(6,2)
+
+SQL> SELECT * FROM deposits
+  2  ;
+
+     ACTNO CNAME                BNAME                    AMOUNT ADATE           
+---------- -------------------- -------------------- ---------- ---------       
+       100 ANIL                 VRCE                       1000 01-MAR-95       
+       101 SUNIL                AJNI                       5000 04-JAN-96       
+       102 MEHUL                KAROLBAGH                  3500 17-NOV-95       
+       104 MADHURI              CHANDI                     1200 17-DEC-95       
+       105 PRAMOD               M.G.ROAD                   3000 27-MAR-96       
+       106 SANDEEP              ANDHERI                    2000 31-MAR-96       
+       107 SHIVANI              VIRAR                      1000 05-SEP-95       
+       108 KRANTI               NEHRU PLACE                5000 02-JUL-95       
+       109 MINU                 POWAI                      7000 10-AUG-95       
+
+9 rows selected.
+
+SQL> SELECT * FROM borrows;
+
+    LOANNO CNAME                BNAME                    AMOUNT                 
+---------- -------------------- -------------------- ----------                 
+       201 ANIL                 VRCE                       1000                 
+       206 MEHUL                AJNI                       5000                 
+       311 SUNIL                DHARAMPETH                 3000                 
+       321 MADHURI              ANDHERI                    2000                 
+       375 PRAMOD               VIRAR                      8000                 
+       481 KRANTI               NEHRU PLACE                3000                 
+
+6 rows selected.
+
+SQL> SELECT * FROM customers;
+
+CNAME                CITY                                                       
+-------------------- --------------------                                       
+ANIL                 CALCUTTA                                                   
+SUNIL                DELHI                                                      
+MEHUL                BARODA                                                     
+MANDAR               PATNA                                                      
+MADHURI              NAGPUR                                                     
+PRAMOD               NAGPUR                                                     
+SANDIP               SURAT                                                      
+SHIVANI              BOMBAY                                                     
+KRANTI               BOMBAY                                                     
+NAREN                BOMBAY                                                     
+
+10 rows selected.
+
+SQL> SELECT * FROM branches;
+
+BNAME                CITY                                                       
+-------------------- --------------------                                       
+VRCE                 NAGPUR                                                     
+AJNI                 NAGPUR                                                     
+KAROLBAGH            DELHI                                                     
+CHANDI               DELHI                                                     
+DHARAMPETH           NAGPUR                                                     
+M.G.ROAD             BANGALORE
+ANDHERI              BOMBAY
+VIRAR                BOMBAY
+NEHRU PLACE          DELHI
+POWAI                BOMBAY                                                     
+
+10 rows selected.
+
+SQL> SELECT ACTNO AS "ACCOUNT NO", AMOUNT FROM deposits;
+
+ACCOUNT NO     AMOUNT                                                           
+---------- ----------                                                           
+       100       1000                                                           
+       101       5000                                                           
+       102       3500                                                           
+       104       1200                                                           
+       105       3000                                                           
+       106       2000                                                           
+       107       1000                                                           
+       108       5000                                                           
+       109       7000                                                           
+
+9 rows selected.
+
+
+SQL> SELECT CNAME AS "CUSTOMER NAME" FROM deposits WHERE AMOUNT > 4000;
+
+CUSTOMER NAME                                                                   
+--------------------                                                            
+SUNIL                                                                           
+KRANTI                                                                          
+MINU                                                                            
+
+SQL> SELECT CNAME FROM deposits WHERE ADATE>'1-DEC-96';
+
+no rows selected
+
+SQL> SELECT CNAME FROM deposits WHERE ADATE>'01-DEC-96';
+
+no rows selected
+
+SQL> SELECT CNAME AS "CUSTOMER NAME" FROM deposits WHERE ADATE > '1-DEC-96';
+
+no rows selected
+
+SQL> SELECT COUNT(*) FROM branches WHERE CITY = 'DELHI' OR CITY = 'NAGPUR';
+
+  COUNT(*)                                                                      
+----------                                                                      
+         6                                                                      
+
+SQL> SELECT COUNT(*) FROM branches WHERE CITY = 'DELHI' OR CITY = 'NAGPUR';
+
+  COUNT(*)                                                                      
+----------                                                                      
+         6                                                                      
+
+SQL> SELECT COUNT(*) FROM customers WHERE CITY = 'BOMBAY';
+
+  COUNT(*)                                                                      
+----------                                                                      
+         3                                                                      
+
+SQL> SELECT SUM(AMOUNT) FROM deposits;
+
+SUM(AMOUNT)                                                                     
+-----------                                                                     
+      28700                                                                     
+
+SQL> SELECT SUM(AMOUNT) FROM borrows;
+
+SUM(AMOUNT)                                                                     
+-----------                                                                     
+      22000                                                                     
+
+SQL> SELECT CNAME AS CUSTOMERS FROM customers WHERE CITY = 'BOMBAY' OR CITY = 'NAGPUR';
+
+CUSTOMERS                                                                       
+--------------------                                                            
+MADHURI                                                                         
+PRAMOD                                                                          
+SHIVANI                                                                         
+KRANTI                                                                          
+NAREN                                                                           
+
+SQL> SELECT BNAME AS "BRANCH NAME" FROM branches WHERE CITY = 'DELHI' OR CITY = 'NAGPUR' OR CITY = 'BANGALORE';
+
+BRANCH NAME                                                                     
+--------------------                                                            
+VRCE                                                                            
+AJNI                                                                            
+KAROLBAGH                                                                       
+CHANDI                                                                          
+DHARAMPETH                                                                      
+M.G.ROAD                                                                              
+NEHRU PLACE                                                                                                                                                
+
+7 rows selected.
+
+SQL> SELECT AVG(AMOUNT) AS "AVERAGE DEPOSITS"  FROM deposits;
+
+AVERAGE DEPOSITS                                                                
+----------------                                                                
+      3188.88889                                                                
+
+SQL> SELECT CNAME AS "MAXIMUM DEPOSITER" FROM deposits WHERE AMOUNT = (SELECT MAX(AMOUNT) FROM deposits);
+
+MAXIMUM DEPOSITER                                                               
+--------------------                                                            
+MINU                                                                            
+
+SQL> SELECT CNAME AS "MINIMUM DEPOSITER" FROM deposits WHERE AMOUNT = (SELECT MIN(AMOUNT) FROM deposits);
+
+MINIMUM DEPOSITER                                                               
+--------------------                                                            
+ANIL                                                                            
+SHIVANI                                  
+
+
+SQL> SELECT DATE_FORMAT(CURDATE(), '%d-%m-%y') AS "PRESENT DATE";
+SELECT DATE_FORMAT(CURDATE(), '%d-%m-%y') AS "PRESENT DATE"
+                                                          *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected                                       
+
+SQL> SELECT CNAME AS CUSTOMER FROM deposits WHERE AMOUNT > (SELECT AVG(AMOUNT) FROM deposits);
+
+CUSTOMER                                                                        
+--------------------                                                            
+SUNIL                                                                           
+MEHUL                                                                           
+KRANTI                                                                          
+MINU                                                                            
+ 

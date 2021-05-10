@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object</title>
+</head>
+<body>
+	<h1>Javascript objescts and methods</h1>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		var myName = {
+			firstName : "Pritesh",
+			lastName : "Tripathi",
+			dateOfBirth : "2nd July 1999",
+			rollNum : 111,
+			city : "surat",
+			fullName : function() {
+				return this.firstName + " " + this.lastName + " born on " + this.dateOfBirth + " having roll No.: " + this.rollNum + " lives in " + this.city;
+			}
+		};
+		document.getElementById("demo").innerHTML = myName.fullName();
+	</script>
+</body>
+</html>

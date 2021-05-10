@@ -1,0 +1,46 @@
+.paragraph
+		{
+			padding-left: 100px;
+			font-family: cursive, sans-serif;
+		}
+		table
+		{
+			text-align: left
+			border-collapse:collapse;
+			font-family: cursive,sans-serif;
+			
+	    }
+	    table,th,td
+	    {
+	    	
+	    	padding:2px 10px 2px 10px;
+	    }
+	    tr:nth-child(even)
+	    {
+	    	background-color:rgb(200,200,200);
+	    }
+	    body
+	    {
+	    	margin: 50px;
+	    	padding:20px;
+	    	border: 10px solid grey;
+	    }
+	    p
+	    {
+	    	font-family: cursive,sans-serif;
+	    }
+	    ul
+	    {
+	    	list-style-type: square;
+	    	padding-left: 100px; 
+	    	font-size: 20px; 
+	    	font-family: cursive, sans-serif;
+	    }
+	    hr
+	    {
+	    	border: 2px solid grey;
+	    }
+	    pre
+	    {
+	    	font-family: cursive,sans-serif;
+	    }

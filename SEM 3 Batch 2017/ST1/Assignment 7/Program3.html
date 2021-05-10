@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM USING JAVASCRIPT</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="window.alert('Welcome to my form');" >
+	<h1 style="text-align: center">SUBMIT FORM</h1>
+	<form onsubmit="window.alert('SUCCESS!!')" method="POST">
+		<div class="boxes">
+			<div class="lables">
+				<label for="firstName" onmouseover="changeSize(this)" onmouseout="changeColor(this)">First Name:</label>
+			</div>
+			<div>
+				<input class="input" type="text" name="firstName" placeholder="Enter First name" onfocusin="changeBg(this)" onfocusout="resetBg(this)" required>
+			</div>
+		</div>
+		<div class="boxes">
+			<div class="lables">
+				<label for="midName" onmouseover="changeSize(this)" onmouseout="changeColor(this)">Middle Name:</label>
+			</div>
+			<div>
+				<input class="input" type="text" name="midName" placeholder="Enter Middle name" onfocusin="changeBg(this)" onfocusout="resetBg(this)">
+			</div>
+		</div>
+		<div class="boxes">
+			<div class="lables">		
+				<label for="lastName" onmouseover="changeSize(this)" onmouseout="changeColor(this)">Last Name:</label>
+			</div>
+			<div>
+				<input class="input" type="text" name="lastName" placeholder="Enter Last name" onfocusin="changeBg(this)" onfocusout="resetBg(this)" onfocusout="resetBg(this)" required>
+			</div>
+		</div>
+		<div class="boxes">
+			<div class="lables">		
+				<label class="input" for="BOD" onmouseover="changeSize(this)" onmouseout="changeColor(this)">Birth Of Date:</label>
+			</div>
+			<div>
+				<input class="input" type="date" name="BOD" required>
+			</div>
+		</div>
+		<div class="boxes">
+			<div class="lables">
+				<label class="input" for="address" onmouseover="changeSize(this)" onmouseout="changeColor(this)">Address:</label>
+			</div>
+			<div>
+				<input class="input" type="text" name="address" placeholder="Enter Address" onfocusin="changeBg(this)" onfocusout="resetBg(this)" required>
+			</div>
+		</div>
+		<div class="boxes">
+			<div class="lables">
+				<label for="email" onmouseover="changeSize(this)" onmouseout="changeColor(this)">Email:</label>
+			</div>
+			<div>
+				<input class="input" type="Email" name="email" placeholder="Enter Email"  onfocusin="changeBg(this)" onfocusout="resetBg(this)" required>
+			</div>
+		</div>
+		<div class="btn">
+		<input class="button" type="submit" value="submit">
+		</div>
+	</form>
+
+	<script type="text/javascript">
+		function changeBg(pointing){
+			pointing.style.background = "#99ff66";
+		}
+		function changeSize(p){
+			p.style.color ="red";
+		}
+		function changeColor(p){
+			p.style.color ="black";
+		}
+		function resetBg(pointing){
+			pointing.style.background = "white";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Scope</title>
+    <script type="text/javascript">
+        global="I am global varialbe";
+        document.write(global);
+        document.write("<br>");
+        scope();
+         function scope(){
+             var global="I am local varialbe";
+             document.write(global);
+         }
+         document.write("<br>");
+         document.write(global);
+         
+    </script>
+</head>
+<body>
+
+</body>
+</html>

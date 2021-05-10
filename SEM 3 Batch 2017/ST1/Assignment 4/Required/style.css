@@ -1,0 +1,58 @@
+	table
+	{
+		border-collapse: collapse;
+
+	}
+	table,th,td
+	{
+		border-right: 2px solid grey;
+		border-bottom: 2px solid grey;
+		text-align: center;
+		font-family: cursive,sans-serif;
+	}
+	th,td 
+	{
+		padding:20px;
+		font-size: 20px;
+	}
+	#t1
+	{
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+	td{
+		font-size: 35px;
+		background-size:150px 100px;
+	}
+	body{
+		padding:30px;
+		margin:10px solid grey;
+		background-color:;
+	}
+	a:link
+	{
+		color:black;
+		text-decoration: none;
+	}
+	a:visited
+	{
+		color:black;
+		text-decoration: none;
+	}
+	a:hover
+	{
+		color:black;
+		text-decoration: none;
+	}
+	a:active
+	{
+		color:black;
+		text-decoration: none;
+	}
+	#image
+	{
+		background-image: url("august1.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+
+	}

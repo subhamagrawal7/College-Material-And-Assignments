@@ -1,0 +1,408 @@
+/*----------------------------------
+  Containers
+------------------------------------*/
+/*5px distance container*/
+   @media (max-width: 33em){
+  .g-row-col--xs-5{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 0.625em;
+ }
+   .g-row-col--xs-10{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 1.125em;
+ }
+}
+  /* Small screen / phone */
+  @media (min-width: 34em){
+   .g-row-col--xs-5{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 0.625em;
+ }
+   .g-row-col--xs-10{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 1.125em;
+ }
+}
+  /* Medium screen / tablet */
+  @media (min-width: 48em){
+    .g-row-col--xs-5{
+   display: grid;
+   grid-template-columns: 4fr 8fr;
+   grid-gap: 0.625em;
+ }
+   .g-row-col--xs-10{
+   display: grid;
+   grid-template-columns: 4fr 8fr;
+   grid-gap: 1.125em;
+ }
+}
+  /* Extra large screen / wide desktop */
+  @media (min-width: 62em){
+    .g-row-col--xs-5{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-gap: 0.625em;
+  }
+   .g-row-col--xs-10{
+   display: grid;
+   grid-template-columns: 4fr 8fr;
+   grid-gap: 1.125em;
+  }
+ }
+
+/*----------------------------------
+
+
+/*----------------------------------
+  Font Family
+------------------------------------*/
+.g-font-family--primary {
+  font-family: Lato, sans-serif !important;
+}
+
+.g-font-family--secondary {
+  font-family: Montserrat, sans-serif !important;
+}
+
+.g-font-family--playfair {
+  font-family: Playfair Display, serif !important;
+}
+
+.g-font-family--Alegreya {
+  font-family: 'Alegreya', serif !important;
+}
+
+
+/*----------------------------------
+  Font Weight
+------------------------------------*/
+.g-font-weight--300 {
+  font-weight: 300 !important;
+}
+
+.g-font-weight--400 {
+  font-weight: 400 !important;
+}
+
+.g-font-weight--500 {
+  font-weight: 500 !important;
+}
+
+.g-font-weight--600 {
+  font-weight: 600 !important;
+}
+
+.g-font-weight--700 {
+  font-weight: 700 !important;
+}
+
+/*----------------------------------
+  Colors
+------------------------------------*/
+/* Text Colors */
+.g-color--primary {
+  color: #13b1cd !important;
+}
+
+.g-color--blueviolet {
+  color: #9877ea !important;
+}
+
+.g-color--red {
+  color: #c54041 !important;
+}
+
+.g-color--gold {
+  color: #b99769 !important;
+}
+
+.g-color--body {
+  color: #fff !important;
+}
+
+.g-color--dark {
+  color: #222324 !important;
+}
+
+.g-color--dark-light {
+  color: #242526 !important;
+}
+
+.g-color--heading {
+  color: #242424 !important;
+}
+
+.g-color--white {
+  color: #fff !important;
+}
+
+.g-color--text {
+  color: #656565 !important;
+}
+
+.g-color--gray-light {
+  color: #cecece !important;
+}
+
+.g-color--gray-lighter {
+  color: #aeaeae !important;
+}
+
+.g-color--white-opacity {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.g-color--white-opacity-light {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.g-color--white-opacity-lighter {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.g-color--white-opacity-lightest {
+  color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.g-color--sky-light {
+  color: #f5f8f9 !important;
+}
+
+/* Hover Colors */
+.g-color--text[href]:hover {
+  color: #13b1cd !important;
+}
+
+.g-color--white-opacity[href]:hover {
+  color: #13b1cd !important;
+}
+/* Background Colors */
+.g-bg-color--primary {
+  background-color: #13b1cd !important;
+}
+
+.g-bg-color--blueviolet {
+  background-color: #9877ea !important;
+}
+
+.g-bg-color--red {
+  background-color: #c54041 !important;
+}
+
+.g-bg-color--gold {
+  background-color: #b99769 !important;
+}
+
+.g-bg-color--body {
+  background-color: #fff !important;
+}
+
+.g-bg-color--dark {
+  background-color: #222324 !important;
+}
+
+.g-bg-color--dark-light {
+  background-color: #242526 !important;
+}
+
+.g-bg-color--heading {
+  background-color: #242424 !important;
+}
+
+.g-bg-color--white {
+  background-color: #fff !important;
+}
+
+.g-bg-color--text {
+  background-color: #656565 !important;
+}
+
+.g-bg-color--gray-light {
+  background-color: #cecece !important;
+}
+
+.g-bg-color--gray-lighter {
+  background-color: #efefef !important;
+}
+
+.g-bg-color--white-opacity {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.g-bg-color--white-opacity-light {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.g-bg-color--white-opacity-lighter {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.g-bg-color--white-opacity-lightest {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.g-bg-color--sky-light {
+  background-color: #f5f8f9 !important;
+}
+
+.g-bg-color--primary-to-blueviolet-ltr {
+  background-image: linear-gradient(145deg, rgba(19, 177, 205, 0.95) 0%, rgba(152, 119, 234, 0.95) 100%);
+  background-repeat: repeat-x;
+}
+
+.g-bg-color--primary-ltr {
+  background-image: linear-gradient(145deg, rgba(19, 177, 205, 0.6) 0%, #13b1cd 100%);
+  background-repeat: repeat-x;
+}
+.g-bg-color--White-ice {
+  background-color: #d5ebdf !important;
+}
+
+.g-bg-color--something {
+  background-color: #cbf0f8 !important;
+}
+.g-bg-color--party-bliss {
+  background-image: linear-gradient(-225deg, #77FFD2 0%, #6297DB 48%, #1EECFF 100%);
+}
+.g-bg-color--colourful-peach {
+  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+.g-bg-color--dense-water {
+  background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+}
+.g-bg-color--juicy-peach {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+.g-bg-color--dusty-grass {
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.g-bg-color--mabel {
+  background-color: #c7e7e6 !important;
+}
+.g-bg-color--Pelorous {
+  background-color: #2ba2c9 !important;
+}
+.g-bg-color--mysin {
+  background-color: #f2ae3d !important;
+}
+.g-bg-color--blue-lagoon {
+  background-color: #00596f !important;
+}
+.g-bg-color--blackcurrent {
+  background-color: #331343 !important;
+}
+.g-bg-color--Something2 {
+  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+}
+.g-bg-color--scooter {
+  background-color: #399ca4 !important;
+}
+.g-bg-color--vartik {
+  background-image: linear-gradient(180deg, #00beff 0%, #007499 100%);
+}
+.g-bg-color--eternal-constance {
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%) !important;
+}
+
+/*=========================================================
+      BUTTONS
+=========================================================*/
+/* Styles
+------------------------------ */
+.s-btn--white-brd {
+  color: #fff;
+  background: transparent;
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: #fff;
+}
+
+.s-btn--white-brd:focus, .s-btn--white-brd:hover {
+  color: #222324;
+  background: #fff;
+  border-color: #fff;
+}
+
+.s-btn--white-bg {
+  color: #222324;
+  background: #fff;
+}
+
+.s-btn--scooter-bg {
+  color: #fff;
+  background: #399ca4;
+  opacity: 0.8;
+}
+.s-btn--white-bg:focus, .s-btn--white-bg:hover {
+  color: #13b1cd;
+  background: #fff;
+}
+
+.s-btn--dark-bg {
+  color: #fff;
+  background: #222324;
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: #222324;
+}
+
+.s-btn--dark-bg:focus, .s-btn--dark-bg:hover {
+  color: #fff;
+  background: #13b1cd;
+  border-color: #13b1cd;
+}
+
+.s-btn--dark-brd {
+  color: #222324;
+  background: transparent;
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: #222324;
+}
+
+.s-btn--dark-brd:focus, .s-btn--dark-brd:hover {
+  color: #fff;
+  background: #222324;
+  border-color: #222324;
+}
+
+.s-btn--primary-bg {
+  color: #fff;
+  background: #13b1cd;
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: #13b1cd;
+}
+
+.s-btn--primary-bg:focus, .s-btn--primary-bg:hover {
+  color: #fff;
+  background: #13b1cd;
+  border-color: #13b1cd;
+}
+
+.s-btn--primary-brd {
+  color: #13b1cd;
+  background: transparent;
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: #13b1cd;
+}
+
+.s-btn--primary-brd:focus, .s-btn--primary-brd:hover {
+  color: #fff;
+  background: #13b1cd;
+  border-color: #13b1cd;
+}
+
+.s-btn-icon--white-brd {
+  border-left: none;
+}
+
+.s-btn-icon--dark-brd {
+  border-left: none;
+}
+
