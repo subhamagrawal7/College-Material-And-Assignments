@@ -34,6 +34,36 @@
         "content",
         "tutorial"
       ]
+    },
+    {
+      "login": "krithikha2001",
+      "name": "Krithikha Bala",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59526292?v=4",
+      "profile": "https://github.com/krithikha2001",
+      "contributions": [
+        "content",
+        "tutorial"
+      ]
+    },
+    {
+      "login": "geek-2002",
+      "name": "Sankirtana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59257797?v=4",
+      "profile": "https://twitter.com/Sankirtana212",
+      "contributions": [
+        "content",
+        "tutorial"
+      ]
+    },
+    {
+      "login": "Himified",
+      "name": "Himani Verma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62880286?v=4",
+      "profile": "https://github.com/Himified",
+      "contributions": [
+        "content",
+        "tutorial"
+      ]
     }
   ],
   "contributorsPerLine": 7,
