@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<!-- DEFINING THE CHAR SET-->
+	<meta charset="utf-8">
+
+	<!--WEB FONTS REFERENCES-->
+	<!-- Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i|Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+
+	<!-- SETTING VIEWPORT-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS REFERENCE TO BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" >
+	
+	<!-- EXTERNAL STYLES REFERENCE-->
+	<link rel="stylesheet" type="text/css" href="global.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="signUpForm.css">
+	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+</head>
+<body class="g-bg-color--blue-lagoon">
+
+	<div class="g-position--relative main-container">
+		<div class="single-line">
+			<h2 class="g-color--white g-font-weight--400 heading" style="font-size: 2.8em;">SIGN UP</h1>
+		</div>
+		<form name="signup"  onsubmit="return formValidate(event)" method="POST">
+			<!-- NAME OF PERSON -->
+			<div class="single-line">
+				<input type="text" name="person-name" id="username" placeholder="Userame*(7 to 12 char)" title="Maximum 30 characters" required>
+			</div>
+			
+			<!-- PASSWORD -->
+			<div class="single-line">
+				<input type="password" name="password" placeholder="*Password" id="pass" title="MUST CONSISTS OF A UPPERCASE A LOWERCASE AND A NUMBER AND MUST BE 5 TO 10 CHARACTERS." required>
+			</div>
+
+			<!-- CONFIRM PASSWORD -->
+			<div class="single-line">
+				<input type="password" name="cnfrpassword" placeholder="*Confirm Password" id="cnfrpass" title="MUST MATCH ABOVE PASSWORD." required>
+			</div>
+
+			<!-- FIRST NAME OF PERSON -->
+			<div class="single-line">
+				<input type="text" name="first-name"  placeholder="First Name*" required>
+			</div>
+
+			<!-- LAST NAME OF PERSON -->
+			<div class="single-line">
+				<input type="text" name="last-name"  placeholder="Last Name" >
+			</div>
+
+			<!-- AGE-->
+			<div class="single-line">
+				<input type="number" name="years" min="22"  step="1" placeholder="Age*" required>
+			</div>
+
+			<!-- EMAIL -->			
+			<div class="single-line">
+				<input type="email" name="email" placeholder="*Email" style="text-transform: lowercase;" required>
+			</div>
+
+			<!-- MOBILE -->
+			<div class="single-line">
+				<input type="tel" name="phone" id="mobile" placeholder="*Phone/Mobile" title="Exact 10 digit is appreciated." required>
+			</div>
+			
+			<!-- FAX -->
+			<div class="single-line">
+				<input type="text"  placeholder="Fax*">
+			</div>
+			
+			<!-- DOB-->
+			<div class="single-line">
+				<input type="date" placeholder="Date of birth*" required>
+			</div>
+
+			<!--WEBSITE-->
+			<div class="single-line">
+				<input type="text"  placeholder="Website*" required>
+			</div>
+
+			<!--COUNTRY-->
+			<div style="padding-top: 2em; back" class="single-line">
+				<select name="Country*" style="color:rgba(255,255,255,0.7); font-size:1.5em; outline: none; border:none; border-bottom:1px solid white;" class="g-bg-color--blue-lagoon" required>
+					<option value="">Country...</option>
+					<option value="India">India</option>
+					<option value="Latvia">Latvia</option>
+					<option value="Lebanon">Lebanon</option>
+					<option value="Lesotho">Lesotho</option>
+					<option value="Liberia">Liberia</option>
+					<option value="Libya">Libya</option>
+					<option value="Liechtenstein">Liechtenstein</option>
+					<option value="Lithuania">Lithuania</option>
+					<option value="Luxembourg">Luxembourg</option>
+					<option value="Macau">Macau</option>
+					<option value="Macedonia">Macedonia</option>
+					<option value="Madagascar">Madagascar</option>
+					<option value="Malaysia">Malaysia</option>
+					<option value="Malawi">Malawi</option>
+					<option value="Maldives">Maldives</option>
+					<option value="Mali">Mali</option>
+					<option value="Malta">Malta</option>
+					<option value="Marshall Islands">Marshall Islands</option>
+					<option value="Martinique">Martinique</option>
+					<option value="Mauritania">Mauritania</option>
+					<option value="Mauritius">Mauritius</option>
+					<option value="Mayotte">Mayotte</option>
+					<option value="Mexico">Mexico</option>
+					<option value="Midway Islands">Midway Islands</option>
+					<option value="Moldova">Moldova</option>
+					<option value="Monaco">Monaco</option>
+					<option value="Mongolia">Mongolia</option>
+					<option value="Montserrat">Montserrat</option>
+					<option value="Morocco">Morocco</option>
+					<option value="Mozambique">Mozambique</option>
+					<option value="Myanmar">Myanmar</option>
+					<option value="Nambia">Nambia</option>
+					<option value="Nauru">Nauru</option>
+					<option value="Nepal">Nepal</option>
+					<option value="Netherland Antilles">Netherland Antilles</option>
+					<option value="Netherlands">Netherlands (Holland, Europe)</option>
+					<option value="Nevis">Nevis</option>
+					<option value="New Caledonia">New Caledonia</option>
+					<option value="New Zealand">New Zealand</option>
+					<option value="Nicaragua">Nicaragua</option>
+					<option value="Niger">Niger</option>
+					<option value="Nigeria">Nigeria</option>
+					<option value="Niue">Niue</option>
+					<option value="Norfolk Island">Norfolk Island</option>
+					<option value="Norway">Norway</option>
+					<option value="Oman">Oman</option>
+					<option value="Pakistan">Pakistan</option>
+					<option value="Palau Island">Palau Island</option>
+					<option value="Palestine">Palestine</option>
+					<option value="Panama">Panama</option>
+					<option value="Papua New Guinea">Papua New Guinea</option>
+					<option value="Paraguay">Paraguay</option>
+					<option value="Peru">Peru</option>
+					<option value="Phillipines">Philippines</option>
+					<option value="Pitcairn Island">Pitcairn Island</option>
+					<option value="Poland">Poland</option>
+					<option value="Portugal">Portugal</option>
+					<option value="Puerto Rico">Puerto Rico</option>
+					<option value="Turks &amp; Caicos Is">Turks &amp; Caicos Is</option>
+					<option value="Tuvalu">Tuvalu</option>
+					<option value="Uganda">Uganda</option>
+					<option value="Ukraine">Ukraine</option>
+					<option value="United Arab Erimates">United Arab Emirates</option>
+					<option value="United Kingdom">United Kingdom</option>
+					<option value="United States of America">United States of America</option>
+					<option value="Uraguay">Uruguay</option>
+					<option value="Uzbekistan">Uzbekistan</option>
+					<option value="Vanuatu">Vanuatu</option>
+					<option value="Vatican City State">Vatican City State</option>
+					<option value="Venezuela">Venezuela</option>
+					<option value="Vietnam">Vietnam</option>
+					<option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+					<option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+					<option value="Wake Island">Wake Island</option>
+					<option value="Wallis &amp; Futana Is">Wallis &amp; Futana Is</option>
+					<option value="Yemen">Yemen</option>
+					<option value="Zaire">Zaire</option>
+					<option value="Zambia">Zambia</option>
+					<option value="Zimbabwe">Zimbabwe</option>
+				</select>
+			</div>
+
+			<!--Gender-->
+			<div class="gender">
+				<label for="gen">GENDER*</label>
+				<input class="val" type="radio" name="gen" value="male" checked> MALE
+  				<input class="val"  type="radio" name="gen" value="female"> FEMALE
+			</div>
+
+			<!-- DISCLAIMER-->
+			<div style="text-align: center; display:inline; font-size: 1.5em;color:rgba(255,255,255,0.7);" >
+				<input type="checkbox" name="agree" value="agreement" id="agree-tick" required>DISCLAIMER
+			</div>
+			<br>
+			<!-- SUBMIT BUTTON -->
+			<div style="padding-top: 1rem">
+			<input type="submit" class="btn g-color--dark g-bg-color--white" value="SUBMIT FORM">
+			</div>
+		</form>
+		<br>
+	</div>
+	
+	<!-- LINK TO SCRIPT-->
+	<script type="text/javascript" src="signUpForm.js"></script>
+s
+
+</body>
+</html

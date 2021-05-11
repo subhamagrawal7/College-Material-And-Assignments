@@ -1,0 +1,112 @@
+body{
+	border: 2px solid black; 
+	padding: 5em;
+	margin: 2em;
+	font-family: 'Krub', sans-serif;
+}
+.boxes{
+	display: grid;
+	grid-template-columns: 3fr 7fr;
+	grid-gap: 5em;
+	padding: .5em;
+}
+
+/*for desktops*/
+@media screen and (min-width: 980px) {
+  	.lables{
+		font-size: 1.5em;
+		text-align: right;
+		color: #666;
+	}
+	.input{
+		width: 40em;
+		height: 3em;
+	}
+	.button{
+		width: 10em;
+		height: 4em;
+		background-color: #ff3333 !important;
+	}
+	.btn{
+		text-align: center;
+		padding-top: 2em;
+
+	}
+	.button:hover {
+		background-color: #ff9999 !important;
+	}
+}
+
+/*for tabs*/
+@media screen and (max-width: 979px) {
+  	.lables{
+		font-size: 1em;
+		text-align: right;
+	}
+	.input{
+		width: 20em;
+		height: 1.5em;
+	}
+	.button{
+		width: 6em;
+		height: 2em;
+		background-color: #ff3333 !important;
+	}
+	.btn{
+		text-align: center;
+		padding-top: 1em;
+	}
+	.button:hover {
+		background-color: #ff9999 !important;
+	}
+}
+
+/*for mobiles*/
+@media screen and (max-width: 500px) {
+  	.lables{
+		font-size: 1em;
+		text-align: right;
+	}
+	.input{
+		width: 15em;
+		height: 3em;
+	}
+	.button{
+		width: 5em;
+		height: 2em;
+		background-color: #ff3333 !important;
+	}
+	.btn{
+		text-align: center;
+		padding-top: 1em;
+	}
+	.button:hover {
+		background-color: #ff9999 !important;
+	}
+}
+
+/*for extra small*/
+@media screen and (max-width: 250px) {
+  	.lables{
+		font-size: 1.5em;
+		text-align: right;
+	}
+	.input{
+		width: 8em;
+		height: 1.5em;
+	}
+	.button{
+		width: 5em;
+		height: 2em;
+		background-color: #ff3333 !important;
+	}
+	.btn{
+		text-align: center;
+		padding-top: 1em;
+	}
+	.button:hover {
+		background-color: #ff9999 !important;
+	}
+}
+
+

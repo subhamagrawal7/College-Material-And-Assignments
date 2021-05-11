@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Javascript Objects And methods</h1>
+<button onclick="document.getElementById('para').innerHTML = myName.fullName()">CLICK ME</button>
+<p id="para"></p>
+<script type="text/javascript">
+		var myName = {
+			firstName : "Pritesh",
+			lastName : "Tripathi",
+			fullName : function() {
+				return this.firstName + " " + this.lastName;
+			}
+		};
+		
+	</script>
+</body>
+</html>

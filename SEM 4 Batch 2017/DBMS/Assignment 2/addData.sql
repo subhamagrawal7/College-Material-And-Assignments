@@ -1,0 +1,74 @@
+DROP DATABASE IF EXISTS banking;
+CREATE DATABASE banking;
+USE banking;
+
+CREATE TABLE deposits(
+    ACTNO INT NOT NULL,
+    CNAME VARCHAR(20),
+    BNAME VARCHAR(20),
+    AMOUNT NUMERIC(6,2),
+    ADATE DATE,
+    PRIMARY KEY (ACTNO)
+);
+
+CREATE TABLE branches (
+    BNAME VARCHAR(20),
+    CITY VARCHAR(20)
+);
+
+CREATE TABLE customers (
+    CNAME VARCHAR(20),
+    CITY VARCHAR(20)
+);
+
+CREATE TABLE borrows (
+    LOANNO INT NOT NULL,
+    CNAME VARCHAR(20),
+    BNAME VARCHAR(20),
+    AMOUNT NUMERIC(6,2),
+    PRIMARY KEY (LOANNO)
+);
+
+INSERT INTO deposits(ACTNO, CNAME, BNAME, AMOUNT, ADATE)
+VALUES (100, 'ANIL', 'VRCE', 1000.00, '1995-03-01'),
+       (101, 'SUNIL', 'AJNI', 5000.00, '1996-01-04'),
+       (102, 'MEHUL', 'KAROLBAGH', 3500.00, '1995-11-17'),
+       (104, 'MADHURI', 'CHANDI', 1200.00, '1995-12-17'),
+       (105, 'PRAMOD', 'M.G.ROAD', 3000.00, '1995-03-27'),
+       (106, 'SANDIP', 'ANDHERI', 2000.00, '1996-03-31'),
+       (107, 'SHIVANI', 'VIRAR', 1000.00, '1995-09-05'),
+       (108, 'KRANTI', 'NEHRU PLACE', 5000.00, '1995-07-02'),
+       (109, 'MINU', 'POWAI', 7000.00, '1995-08-10');
+
+INSERT INTO branches(BNAME, CITY)
+VALUES ('VRCE', 'NAGPUR'),
+       ('ANJI', 'NAGPUR'),
+       ('KAROLBAGH', 'DELHI'),
+       ('CHANDI', 'DELHI'),
+       ('DHARAMPETH', 'NAGPUR'),
+       ('M.G.ROAD', 'BANGALORE'),
+       ('ANDHERI', 'BOMBAY'),
+       ('VIRAR', 'BOMBAY'),
+       ('NEHRU PLACE', 'DELHI'),
+       ('POWAI', 'BOMBAY');
+
+INSERT INTO customers(CNAME, CITY)
+VALUES ('ANIL', 'CALCUTTA'),
+       ('SUNIL', 'DELHI'),
+       ('MEHUL', 'BARODA'),
+       ('MANDAR', 'PATNA'),
+       ('MADHURI', 'NAGPUR'),
+       ('PRAMOD', 'NAGPUR'),
+       ('SANDIP', 'SURAT'),
+       ('SHIVANI', 'BOMBAY'),
+       ('KRANTI', 'BOMBAY'),
+       ('NAREN', 'BOMBAY');
+
+INSERT INTO borrows(LOANNO, CNAME, BNAME, AMOUNT)
+VALUES (201, 'ANIL', 'VRCE', 1000.00),
+       (206, 'MEHUL', 'AJNI', 5000.00),
+       (311, 'SUNIL', 'DHARAMPETH', 3000.00),
+       (321, 'MADHURI', 'ANDHERI', 2000.00),
+       (375, 'PRAMOD', 'VIRAR', 8000.00),
+       (481, 'KRANTI', 'NEHRU PLACE', 3000.00);
+

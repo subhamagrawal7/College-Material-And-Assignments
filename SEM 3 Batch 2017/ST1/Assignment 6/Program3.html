@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Concate JS</title>
+	<script type="text/javascript">
+	var s1,s2,s3;
+	function con(){
+		s1 = document.getElementById("st1").value;
+		s2 = document.getElementById("st2").value;
+		s3 = s1 + s2;
+		document.getElementById("str3").value=s3;
+	}
+	</script>
+</head>
+<body>
+	<p>Enter the first string:<br></p>
+	<input type="text" id="st1">
+	<br>
+	
+	<p>Enter the second string:</p>
+	<br>
+	<input type="text" id="st2">
+	<br>
+	
+	<button onclick="con()">Click</button>
+	<br>
+	<p>The two string after conactenaton is:</p>
+	<input type="text" id="str3">
+</body>
+</html>

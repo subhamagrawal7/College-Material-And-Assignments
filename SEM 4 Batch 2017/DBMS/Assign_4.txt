@@ -1,0 +1,121 @@
+       select stcode1, S1.name, stcode2 , S2.name, distance
+    -> from track, station as S1, station as S2
+    -> where stcode1 = S1.stcode and stcode2 = S2.stcode
+    -> order by distance;
+
++---------+---------+---------+-----------+----------+
+| stcode1 | name    | stcode2 | name      | distance |
++---------+---------+---------+-----------+----------+
+| BYC     | BYCULLA | DR      | DADAR     |        4 |
+| CST     | MUMBAI  | BYC     | BYCULLA   |        5 |
+| CST     | MUMBAI  | DR      | DADAR     |        9 |
+| BYC     | BYCULLA | KRL     | KURLA     |       11 |
+| CST     | MUMBAI  | KRL     | KURLA     |       16 |
+| CST     | MUMBAI  | GPR     | GHATKOPAR |       20 |
+| TNA     | THANE   | KYN     | KALYAN    |       20 |
+| DR      | DADAR   | TNA     | THANE     |       25 |
+| CST     | MUMBAI  | TNA     | THANE     |       34 |
+| KRL     | KURLA   | KYN     | KALYAN    |       38 |
+| TNA     | THANE   | KSR     | KASARA    |       43 |
+| CST     | MUMBAI  | DL      | DOMBIVALI |       49 |
+| CST     | MUMBAI  | KYN     | KALYAN    |       54 |
+| CST     | MUMBAI  | AMR     | AMBARNATH |       65 |
+| CST     | MUMBAI  | KSR     | KASARA    |       77 |
++---------+---------+---------+-----------+----------+
+15 rows in set (0.00 sec)
+
+       select *
+    -> from track
+    -> where distance < 20;
++---------+---------+----------+
+| stcode1 | stcode2 | distance |
++---------+---------+----------+
+| BYC     | DR      |        4 |
+| BYC     | KRL     |       11 |
+| CST     | BYC     |        5 |
+| CST     | DR      |        9 |
+| CST     | KRL     |       16 |
+| GRP     | TNA     |       14 |
++---------+---------+----------+
+6 rows in set (0.00 sec)
+
+       select id
+    -> from trainhalts
+    -> where stcode = (select stcode
+    ->                 from station
+    ->                 where name = 'GHATKOPAR');
++------+
+| id   |
++------+
+| A65  |
+| KP11 |
+| KP11 |
+| KP11 |
++------+
+4 rows in set (0.00 sec)
+
+ select trainhalts.id, train.name, trainhalts.stcode, station.name from trainhalts, train, station
+    -> where trainhalts.id = train.id and trainhalts.stcode = station.stcode and station.name = 'MUMBAI' and trainhalts.seqno = 0
+    ->  order by train.name;
++------+---------------+--------+--------+
+| id   | name          | stcode | name   |
++------+---------------+--------+--------+
+| A65  | CST-AMR_LOCAL | CST    | MUMBAI |
+| KP11 | CST-KYN       | CST    | MUMBAI |
++------+---------------+--------+--------+
+2 rows in set (0.00 sec)
+
+
+       select station.name
+    -> from station, trainhalts
+    -> where trainhalts.id = (select id from train where name =  'CST-AMR_LOCAL') and
+    ->       trainhalts.stcode = station.stcode
+    -> order by seqno;
++-----------+
+| name      |
++-----------+
+| MUMBAI    |
+| BYCULLA   |
+| DADAR     |
+| KURLA     |
+| GHATKOPAR |
+| THANE     |
+| DOMBIVALI |
+| KALYAN    |
+| AMBARNATH |
++-----------+
+9 rows in set (0.00 sec)
+
+       select train.name
+    -> from trainhalts, train
+    -> where trainhalts.id = train.id
+    -> and trainhalts.seqno < 6
+    -> and trainhalts.stcode = (select stcode from station where name = 'THANE');
++---------------+
+| name          |
++---------------+
+| CST-AMR_LOCAL |
++---------------+
+1 row in set (0.00 sec)
+
+
+       select S1.name, S2.name, distance
+    -> from station as S1, station as S2 , track
+    -> where track.stcode1 = S1.stcode and track.stcode2 = S2.stcode
+    -> order by distance DESC
+    -> LIMIT 1;
++--------+--------+----------+
+| name   | name   | distance |
++--------+--------+----------+
+| MUMBAI | KASARA |       77 |
++--------+--------+----------+
+1 row in set (0.00 sec)
+
+
+SELECT id,seqno FROM trainhalts WHERE timeout=(SELECT MAX(timeout) FROM trainhalts WHERE timeout NOT IN (SELECT MAX(timeout) FROM trainhalts));
++-----+-------+
+| id  | seqno |
++-----+-------+
+| A65 |     6 |
++-----+-------+
+1 row in set (0.00 sec)
